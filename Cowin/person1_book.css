@@ -1,0 +1,356 @@
+#vaccine1 {
+
+    display: inline-block;
+    margin-left: 35px;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+#price1 {
+
+    display: inline-block;
+    margin-left: 75px;
+    font-size: 15px;
+    font-weight: 900;
+
+
+}
+
+#date1 {
+
+
+    display: inline-block;
+    margin-left: 200px;
+    font-size: 15px;
+    font-weight: 900;
+
+}
+
+
+#time1 {
+
+
+    display: inline-block;
+    margin-left: 200px;
+    font-size: 15px;
+    font-weight: 900;
+
+}
+
+#vaccine,
+#price,
+#date,
+#time {
+
+    display: inline;
+    font-size: 15px;
+    font-weight: 900;
+
+}
+
+#cdate1,#ctime1,#cprefrence1{
+    display: inline;
+    font-size: 15px;
+    font-weight: 900;
+
+}
+
+
+#namebox {
+
+    border-style: solid;
+    border-color: darkblue;
+    background-color: white;
+    border-width: 1px;
+    border-radius: 10px;
+    width: 1200px;
+    margin-top: 10px;
+    margin-left: 15px;
+
+}
+
+#one,
+#two,
+#three,
+#four {
+
+    margin: 20px;
+    color: rgb(24, 7, 122);
+    font-size: 20px;
+    border-radius: 5px;
+    font-weight: 700;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+
+}
+
+#confirmbutton {
+
+    margin-left: 1115px;
+    margin-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+#hash {
+
+    display: inline-block;
+    margin-left: 35px;
+    font-size: 20px;
+    font-weight: 900;
+    padding-top: 5px;
+
+}
+
+#hashsrno {
+
+    display: inline-block;
+    margin-left: 35px;
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 5px;
+}
+
+#names {
+
+    display: inline-block;
+    margin-left: 75px;
+    font-size: 20px;
+    font-weight: 900;
+    padding-top: 5px;
+
+
+}
+
+#finalname1 {
+
+    display: inline-block;
+    margin-left: 70px;
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 5px;
+
+
+}
+
+#patient {
+
+    margin-left: 15px;
+    font-size: 25px;
+    color: blue;
+    font-weight: 900;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    display: inline-block;
+}
+
+#referenceid {
+
+
+    display: inline-block;
+    margin-left: 200px;
+    font-size: 20px;
+    font-weight: 900;
+    padding-top: 5px;
+
+}
+
+#finalreferenceid {
+
+
+    display: inline-block;
+    margin-left: 150px;
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 5px;
+
+}
+
+#idcarry {
+
+    display: inline-block;
+    margin-left: 250px;
+    font-size: 20px;
+    font-weight: 900;
+    padding-top: 5px;
+
+
+
+}
+
+#finalid1 {
+
+    display: inline-block;
+    margin-left: 250px;
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 5px;
+
+
+
+}
+
+
+
+#price1 {
+
+
+    display: inline-block;
+    margin-left: 200px;
+    font-size: 15px;
+    font-weight: 900;
+
+}
+
+
+#cdate {
+
+    display: inline-block;
+    margin-left: 35px;
+    font-size: 15px;
+    font-weight: 900;
+
+}
+
+#ctime {
+    display: inline-block;
+    margin-left: 400px;
+    font-size: 15px;
+    font-weight: 900;
+
+}
+
+#cpreference {
+
+    display: inline-block;
+    margin-left: 300px;
+    font-size: 15px;
+    font-weight: 900;
+
+
+
+}
+
+#confirmbox,
+#confirmationdetail {
+
+    display: none;
+}
+
+#reference {
+    opacity: 0.6;
+    font-size: 20px;
+    display: inline-block;
+
+    margin-left: 15px;
+    margin-top: 10px;
+
+}
+
+#selecttime {
+    color: rgb(24, 7, 122);
+    font-size: 30px;
+    margin-left: 15px;
+
+}
+
+#appointmentconfirmation {
+    color: rgb(24, 7, 122);
+    font-size: 30px;
+    margin-left: 15px;
+}
+
+#confirmation,
+#confirmation2 {
+    display: none;
+    color: rgb(24, 7, 122);
+    margin-left: 15px;
+}
+
+#hospital {
+
+    margin-left: 15px;
+    color: rgb(24, 7, 122);
+    font-size: 25px;
+}
+
+#appointmentsuccess {
+
+    color: rgb(24, 7, 122);
+    font-size: 30px;
+    margin-left: 15px;
+    display: none;
+
+}
+
+/* #manualid{
+    margin-left: 0px;
+} */
+
+#confirmbox {
+
+    border: solid;
+    border-color: black;
+    border-width: 0.5px;
+    margin-top: 5px;
+}
+
+
+#colordiv {
+    background-color: rgb(173, 172, 170);
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+#instructions {
+    margin-left: 15px;
+    width: 1200px;
+    display: none;
+}
+
+.listitem {
+    padding: 5px;
+}
+
+#closebutton {
+
+    margin-left: 1115px;
+    margin-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 700;
+    display: none;
+}
+
+#person1_bookpg{
+    display: none;;
+
+
+}
+
+#finalid{
+
+    margin-left: 0px;
+}
+
+#manualid{
+
+    margin-left: 50px;
+}

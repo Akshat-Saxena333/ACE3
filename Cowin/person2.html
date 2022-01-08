@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person2</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+    <style>
+        fieldset {
+            border: 1px solid #ddd !important;
+            margin: 0;
+            min-width: 0;
+            padding: 10px;
+            position: relative;
+            border-radius: 4px;
+            background-color: #f5f5f5;
+            padding-left: 10px !important;
+        }
+
+        legend {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 0px;
+            width: 20%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px 5px 5px 10px;
+            background-color: #ffffff;
+        }
+
+        .panel-body {
+
+            width: 2000px;
+        }
+
+        #head {
+            font-size: 30px;
+            color: blue;
+            font-weight: 700;
+            margin-left: 50px;
+        }
+
+
+        #dob1
+         {
+
+            display: inline-block;
+            margin-left: 35px;
+            font-size: 15px;
+            font-weight: 900;
+        }
+
+        #id1{
+
+            display: inline-block;
+            margin-left: 75px;
+            font-size: 15px;
+            font-weight: 900;
+
+
+        }
+
+        #idnum1{
+
+
+            display: inline-block;
+            margin-left: 200px;
+            font-size: 15px;
+            font-weight: 900;
+
+        }
+
+        #dob,
+        #id,
+        #idnum {
+
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 900;
+           
+        }
+
+        #bt {
+            color: white;
+            background-color: rgb(0, 0, 255);
+            margin-left: 550px;
+            padding-left: 75px;
+            padding-right: 75px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-top: 10px;
+            font-size: 20px;
+            border-radius: 5px;
+
+
+
+        }
+
+        #head2{
+
+            font-size: 30px;
+            color: blue;
+            font-weight: 700;
+            margin-left: 50px;
+
+
+        }
+
+
+
+        #dob22
+         {
+
+            display: inline-block;
+            margin-left: 35px;
+            font-size: 15px;
+            font-weight: 900;
+        }
+
+        #id22{
+
+            display: inline-block;
+            margin-left: 75px;
+            font-size: 15px;
+            font-weight: 900;
+
+
+        }
+
+        #idnum22{
+
+
+            display: inline-block;
+            margin-left: 200px;
+            font-size: 15px;
+            font-weight: 900;
+
+        }
+
+
+
+
+
+
+        #dob2,
+        #id2,
+        #idnum2 {
+
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 900;
+           
+        }
+    </style>
+</head>
+
+<body onload="func()">
+
+    <div class="container">
+        <br />
+        <div class="panel panel-default">
+
+
+            <div class="panel-body">
+
+                <fieldset class="col-md-6">
+                    <legend>Not Vaccinated</legend>
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h1 id="head"></h1>
+                        </div>
+
+                        <div>
+                            <span id="dob1">Year of birth :
+                                <p id="dob"></p>
+                                </p>
+                            </span>
+
+                            <span id="id1">Photo ID :
+                                <p id="id">
+                                </p>
+                            </span>
+
+                            <span id="idnum1">ID Number :
+                                <p id="idnum">
+                                </p>
+                            </span>
+
+
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <br />
+        <div class="panel panel-default">
+
+
+            <div class="panel-body">
+
+                <fieldset class="col-md-6">
+                    <legend>Not Vaccinated</legend>
+
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h1 id="head2"></h1>
+                        </div>
+
+                        <div>
+                            <span id="dob22">Year of birth :
+                                <p id="dob2"></p>
+                                </p>
+                            </span>
+
+                            <span id="id22">Photo ID :
+                                <p id="id2">
+                                </p>
+                            </span>
+
+                            <span id="idnum22">ID Number :
+                                <p id="idnum2">
+                                </p>
+                            </span>
+
+
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <div class="clearfix"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <button id="bt" onclick="document.location='form3.html'">Add Member</button>
+
+
+
+
+    <script>
+        let user_records = new Array();
+        user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
+
+        document.getElementById("head").innerHTML = user_records[0].panname;
+        document.getElementById("dob").innerHTML = user_records[0].dob;
+        document.getElementById("id").innerHTML = user_records[0].identification;
+
+
+
+
+
+        let user_records2 = new Array();
+        user_records2 = JSON.parse(localStorage.getItem("users2")) ? JSON.parse(localStorage.getItem("users2")) : []
+
+        document.getElementById("head2").innerHTML = user_records2[0].panname;
+        document.getElementById("dob2").innerHTML = user_records2[0].dob;
+        document.getElementById("id2").innerHTML = user_records2[0].identification;
+        // console.log(user_records2[0].panname);
+
+
+        function func() {
+            swal({
+                title: "Success",
+                text: "Individual successfully registered!",
+                icon: "success",
+                button: "Click here to proceed",
+            });
+        }
+    </script>
+
+</body>
+
+</html>

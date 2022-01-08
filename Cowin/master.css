@@ -1,0 +1,41 @@
+#guide{
+
+    
+    width:525px;
+    float: left;
+    
+}
+
+#master{
+    
+    background-color: tomato;
+
+    width: 790px;
+    float: left;
+    margin-top: 0px;
+}
+
+
+#guide11{
+
+    border: solid;
+    padding: 2px;
+    border-color: black;
+    margin: 2px;
+    text-align: center;
+}
+
+#guide2{
+
+    display: none;
+}
+
+#guide22{
+
+    border: solid;
+    padding: 2px;
+    border-color: black;
+    margin: 2px;
+    text-align: center;
+
+}

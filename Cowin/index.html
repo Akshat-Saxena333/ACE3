@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP</title>
+
+    <!-- <script type="text?javascript" src="person1_book.js"></script> -->
+
+    <link rel="stylesheet" href="otp.css">
+    <link rel="stylesheet" href="welcome.css">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="form2.css">
+    <link rel="stylesheet" href="person1.css">
+    <link rel="stylesheet" href="person2.css">
+    <link rel="stylesheet" href="slot.css">
+    <link rel="stylesheet" href="person1_book.css">
+
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+
+
+
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- <script src="alert/dist/sweetalert-dev.js"></script>
+    <link rel="stylesheet" href="alert/dist/sweetalert.css"> -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <style>
+        /* #head{
+            color: blue;
+            font-size: 25px;
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        #otp{
+            margin-top: 10px;
+            text-align: center;
+            font-size: 20px;
+
+            
+        }
+
+        #number{
+
+            border-bottom: red;
+            border-style: solid;
+            text-align: center;
+            border-top-width: 0;
+            border-left-width: 0;
+            border-right-width: 0;
+            border-bottom-width: 2px;
+            margin-left: 545px;
+            margin-right: 35px;
+            font-size: 20px;
+
+        }
+
+        #bt{
+            color: white;
+            background-color: rgb(0, 0, 255);
+            margin-left: 550px;
+            padding-left: 75px;
+            padding-right: 75px;
+            padding-top: 5px;
+            padding-bottom:5px;
+            margin-top: 0px;
+            font-size: 20px;
+            border-radius: 5px;
+           
+     
+
+        } */
+    </style>
+</head>
+
+<body>
+
+
+
+    <div id="otppage">
+        <h1 id="head">Register or Sign in for Vaccination</h1>
+
+        <p id="otp">An OTP will be sent to your mobile number for verification</p>
+
+        <input type="text" id="number" placeholder="Enter the number here">
+        <br>
+        <br>
+
+
+
+        <button id="bt1" onclick="otppage()">Get OTP</button>
+
+    </div>
+
+
+
+
+    <!-- welcome page  -->
+
+
+    <div id="welcomepg">
+
+        <button id="bt" onclick="welcomepg()">Register Member</button>
+    </div>
+
+
+
+
+    <!-- form  -->
+
+
+    <div id="formpg">
+        <div id="div">
+            <h1 id="head">Register for Vaccination</h1>
+
+
+            <label for="proof" id="photo">Photo ID Proof</label>
+            <br>
+
+
+            <select name="proof" id="proof">
+                <option value="Aadhar Card" class="option">Aadhar Card</option>
+                <option value="Driving License" class="option">Driving License</option>
+                <option value="PAN Card" class="option">PAN Card</option>
+                <option value="Passport" class="option">Passport</option>
+                <option value="Pension Passbook" class="option">Pension Passbook</option>
+                <option value="NPR Smart Card" class="option">NPR Smart Card</option>
+                <option value="Voter ID" class="option">Voter ID</option>
+
+
+            </select>
+            <br>
+            <br>
+
+            <label id="pan">PAN Card Number</label>
+            <br>
+            <input type="text" class="inpu" id="pannumber">
+
+            <br>
+            <br>
+
+            <label id="name">Name (as in PAN Card)</label>
+            <input class="inpu" id="panname">
+
+            <br>
+            <br>
+
+            <label id="gender">Gender</label>
+            <br>
+            <br>
+            <input type="radio" id="male" name="gend" value="male">
+              <label for="male" id="malelabel">Male</label>
+              <input type="radio" id="female" name="gend" value="female">
+              <label for="female" id="femalelabel">Female</label>
+              <input type="radio" id="other" name="gend" value="other">
+              <label for="other" id="otherlabel">Other</label>
+
+
+
+            <br>
+            <br>
+
+
+            <label id="birth">Year of birth (in YYYY format)</label>
+            <input class="inpu" id="dob">
+
+
+            <div id="warning">
+                Registeration is open only for individuals with age 18 years or older
+
+            </div>
+
+            <button id="bt3" onclick="savedata() , formpg()">Register</button>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- person1 -->
+
+    <div id="person1pg">
+
+        <div id="delperson1">
+
+            <div class="container">
+                <br>
+                <div class="panel panel-default">
+
+
+                    <div class="panel-body">
+
+                        <fieldset class="col-md-6">
+                            <legend><span style="font-size: 20px;"> Not Vaccinated</span> </legend>
+
+                            <button style='font-size:24px' id="del" onclick="delfunc()"><i
+                                    class='fa fa-trash'></i></button>
+
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h1 id="name1_pg1"></h1>
+                                </div>
+
+
+
+                                <div>
+                                    <span id="dob1"><span style="font-size: 20px;">Year of birth :</span>
+                                        <p id="person1dob"></p>
+                                        </p>
+                                    </span>
+
+                                    <span id="id1"><span style="font-size: 20px;">Photo ID:</span>
+                                        <p id="id">
+                                        </p>
+                                    </span>
+
+                                    <span id="idnum1"><span style="font-size: 20px;">ID Number</span>
+                                        <p id="idnum">
+                                        </p>
+                                    </span>
+
+
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        <div class="clearfix"></div>
+                    </div>
+
+
+
+                </div>
+                <hr>
+
+
+                <div id="schedule1">
+
+                    <img src="Images/vaccination.png" id="vaccine_icon">
+                    <h2 class="dose1">Dose 1</h2>
+                    <button style='font-size:24px' id="sch_bt" onclick="schedule11()"><i class="fa fa-calendar"></i>
+                        Schedule</button>
+
+
+                    <br>
+                    <br>
+                    <p class="dose1_des">Appointment not scheduled</p>
+
+
+                    <!-- <button style='font-size:24px' id="sch_bt"><i class="fa fa-calendar"></i> Schedule</button> -->
+                    <br>
+                    <!-- <i class="bi bi-trash"></i> -->
+
+                    <!-- <button style='font-size:24px' id="del" onclick="delfunc()"><i class='fa fa-trash'></i></button> -->
+
+
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+
+        <!-- <button id="schedule" onclick="" -->
+
+        <button id="bt4" onclick="person1pg()">Add Member</button>
+    </div>
+
+
+
+
+    <!-- person2 -->
+
+
+
+    <div id="person2pg">
+
+
+        <div id="delperson21">
+
+
+            <div class="container">
+                <br />
+                <div class="panel panel-default">
+
+
+                    <div class="panel-body">
+
+                        <fieldset class="col-md-6">
+                            <legend><span style="font-size: 20px;"> Not Vaccinated</span></legend>
+
+
+                            <button style='font-size:24px' id="del" onclick="delfunc21()"><i
+                                    class='fa fa-trash'></i></button>
+
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h1 class="name1_pg1"></h1>
+                                </div>
+
+                                <div>
+                                    <span id="dob1"><span style="font-size: 20px;">Year of birth :</span>
+                                        <p class="person1dob"></p>
+                                        </p>
+                                    </span>
+
+                                    <span id="id1"><span style="font-size: 20px;">Photo ID:</span>
+                                        <p class="id">
+                                        </p>
+                                    </span>
+
+                                    <span id="idnum1"><span style="font-size: 20px;">ID Number</span>
+                                        <p class="idnum">
+                                        </p>
+                                    </span>
+
+
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+
+                <div id="schedule1">
+
+                    <img src="Images/vaccination.png" id="vaccine_icon">
+                    <h2 class="dose1">Dose 1</h2>
+                    <button style='font-size:24px' id="sch_bt" onclick="schedule21()"><i class="fa fa-calendar"></i>
+                        Schedule</button>
+
+
+                    <br>
+                    <br>
+                    <p class="dose1_des">Appointment not scheduled</p>
+
+
+                    <!-- <button style='font-size:24px' id="sch_bt"><i class="fa fa-calendar"></i> Schedule</button> -->
+                    <br>
+                    <!-- <i class="bi bi-trash"></i> -->
+
+                    <!-- <button style='font-size:24px' id="del" onclick="delfunc()"><i class='fa fa-trash'></i></button> -->
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="delperson22">
+
+
+
+            <div class="container">
+                <br />
+                <div class="panel panel-default">
+
+
+                    <div class="panel-body">
+
+                        <fieldset class="col-md-6">
+                            <legend><span style="font-size: 20px;"> Not Vaccinated</span></legend>
+
+
+                            <button style='font-size:24px' id="del" onclick="delfunc22()"><i
+                                    class='fa fa-trash'></i></button>
+
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h1 class="name2_pg2"></h1>
+                                </div>
+
+                                <div>
+                                    <span id="dob22"><span style="font-size: 20px;">Year of birth :</span>
+                                        <p class="dob2">
+                                        </p>
+                                    </span>
+
+                                    <span id="id22"><span style="font-size: 20px;">Photo ID:</span>
+                                        <p class="id2">
+                                        </p>
+                                    </span>
+
+                                    <span id="idnum22"><span style="font-size: 20px;">ID Number</span>
+                                        <p id="idnum2">
+                                        </p>
+                                    </span>
+
+
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+                <div id="schedule1">
+
+                    <img src="Images/vaccination.png" id="vaccine_icon">
+                    <h2 class="dose1">Dose 1</h2>
+                    <button style='font-size:24px' id="sch_bt" onclick="schedule22()"><i class="fa fa-calendar"></i>
+                        Schedule</button>
+
+
+                    <br>
+                    <br>
+                    <p class="dose1_des">Appointment not scheduled</p>
+
+
+                    <!-- <button style='font-size:24px' id="sch_bt"><i class="fa fa-calendar"></i> Schedule</button> -->
+                    <br>
+                    <!-- <i class="bi bi-trash"></i> -->
+
+                    <!-- <button style='font-size:24px' id="del" onclick="delfunc()"><i class='fa fa-trash'></i></button> -->
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <button id="bt4" onclick="document.location='form3.html'">Add Member</button>
+    </div>
+
+
+
+
+
+
+
+    <!-- form2 -->
+
+
+    <div id="form2pg">
+
+        <div id="div">
+            <h1 id="head">Register for Vaccination</h1>
+
+
+            <label for="proof" id="photo">Photo ID Proof</label>
+            <br>
+
+
+            <select name="proof" id="proof2">
+                <option value="Aadhar Card" class="option">Aadhar Card</option>
+                <option value="Driving License" class="option">Driving License</option>
+                <option value="PAN Card" class="option">PAN Card</option>
+                <option value="Passport" class="option">Passport</option>
+                <option value="Pension Passbook" class="option">Pension Passbook</option>
+                <option value="NPR Smart Card" class="option">NPR Smart Card</option>
+                <option value="Voter ID" class="option">Voter ID</option>
+
+
+            </select>
+            <br>
+            <br>
+
+            <label id="pan">PAN Card Number</label>
+            <br>
+            <input type="text" class="inpu" id="pannumber2">
+
+            <br>
+            <br>
+
+            <label id="name">Name (as in PAN Card)</label>
+            <input class="inpu" id="panname2">
+
+            <br>
+            <br>
+
+            <label id="gender">Gender</label>
+            <br>
+            <br>
+            <input type="radio" id="male" name="gend" value="male">
+              <label for="male" id="malelabel">Male</label>
+              <input type="radio" id="female" name="gend" value="female">
+              <label for="female" id="femalelabel">Female</label>
+              <input type="radio" id="other" name="gend" value="other">
+              <label for="other" id="otherlabel">Other</label>
+
+
+
+            <br>
+            <br>
+
+
+            <label id="birth">Year of birth (in YYYY format)</label>
+            <input class="inpu" id="dob2">
+
+
+            <div id="warning">
+                Registeration is open only for individuals with age 18 years or older
+
+            </div>
+
+            <button id="bt5" onclick="savedata2() , form2pg()">Register</button>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <!-- slot.html -->
+
+
+
+    <div id="slotpg">
+
+        <button id="appointmentbt"><i class='fa fa-long-arrow-left'></i></button>
+
+        <h1 id="appointment_head">Book Appointment for Vaccination</h1>
+        <br>
+
+
+        <button id="pin" onclick="funca() , slot_book()">Search by PIN</button>
+        <button id="district" onclick="func2a() , slot_book()">Search by District</button>
+
+        <div id="pindiv">
+
+            <input id="search_pin">
+            <button id="searchbt_pin" onclick="slot_func()">Search</button>
+        </div>
+
+        <div id="disdiv">
+
+            <select name="proof" id="city">
+                <option value="Jammu and Kashmir" class="option">Jammu and Kashmir</option>
+                <option value="Punjab" class="option">Punjab</option>
+                <option value="Haryana" class="option">Haryana</option>
+                <option value="Rajasthan" class="option">Rajasthan</option>
+                <option value="Delhi" class="option">Delhi</option>
+                <option value="Gujarat" class="option">Gujarat</option>
+                <option value="Bengal" class="option">Bengal</option>
+
+
+            </select>
+
+            <select name="proof" id="locality">
+                <option value="Vesu" class="option">Vesu</option>
+                <option value="Adajan" class="option">Adajan</option>
+                <option value="Pal" class="option">Pal</option>
+                <option value="Althan" class="option">Althan</option>
+                <option value="Palanpur Gam" class="option">Palanpur Gam</option>
+                <option value="Piplod" class="option">Piplod</option>
+                <option value="Athwa" class="option">Athwa</option>
+
+
+            </select>
+
+            <button id="searchbt_dis" onclick="slot_func()">Search</button>
+        </div>
+
+        <div id="id_container">
+
+            <div class="container_slot">
+
+
+                <div class="item1">Name of Places</div>
+                <div class="item">4 Jan 2022</div>
+                <div class="item">5 Jan 2022</div>
+                <div class="item">6 Jan 2022</div>
+                <div class="item">7 Jan 2022</div>
+                <div class="item">8 Jan 2022</div>
+                <div class="item">9 Jan 2022</div>
+                <div class="item">10 Jan 2022</div>
+
+                <div class="item1">Healing Hands Hospital</div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="avl" id="hh" onclick="savedata_covishield()"
+                        value="Healing Hands Hospital">150</button>
+                    <p class="vaccine">COVISHIELD</p>
+                </div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item1">Bombay Multi Speciality Hospital</div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item1">Chhabra Multispeciality Hospital</div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item1">Shalby Hospital</div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="avl" id="sh"
+                        onclick="savedata_covaxin()"
+                        value="Shalby Hospital">333</button>
+                    <p class="vaccine">COVAXIN</p>
+                </div>
+                <div class="item"><button class="na">NA</button></div>
+                <div class="item"><button class="na">NA</button></div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <!-- person1_book -->
+
+    <div id="person1_bookpg">
+
+
+
+        <div id="timings">
+
+
+            <h1 id="selecttime">Select Time Slot
+            </h1>
+
+            <button value="9:00 am to 11:00 am" onclick="func1()" name="9to11" id="one">9:00 am to 11:00 am</button>
+            <button value="11:00 am to 1:00 pm" onclick="func2()" name="11to1" id="two">11:00 am to 1:00 pm</button>
+            <button value="1:00 pm to 3:00 pm" onclick="func3()" name="1to3" id="three">1:00 pm to 3:00 pm</button>
+            <button value="3:00 pm to 6:00 pm" onclick="func4()" name="3to6" id="four">3:00 pm to 6:00 pm</button>
+
+
+            <h1 id="appointmentconfirmation">Appointment Confirmation</h1>
+
+        </div>
+
+
+
+        <h1 id="appointmentsuccess">
+            Appointment Successful </h1>
+
+
+        <h2 id="confirmation"><span style="color: black; font-size: 30px; font-weight: 600;">Your vaccination
+                appointment is
+                confirmed</span></h2>
+        <p id="confirmation2"> <span style="color: black; font-size: 20px; font-weight: 500;">appointment details
+                have also
+                been sent to your registered mobile number through an SMS</span>
+        </p>
+
+        <h2 id="hospital"></h2>
+
+        <div id="details1">
+
+            <span id="vaccine1">Vaccine Name:
+                <p id="vaccine"></p>
+
+            </span>
+
+
+            <span id="price1">Vaccine Price:
+                <p id="price">400
+
+                </p>
+
+            </span>
+
+            <span id="date1">Date:
+                <p id="date"></p>
+
+            </span>
+
+
+            <span id="time1">Time:
+                <p id="time"></p>
+
+            </span>
+
+
+        </div>
+
+        <div id="confirmationdetail">
+
+
+            <span id="cdate">
+                <!-- <p id="dob"></p>
+                    </p> -->
+                Date:<p id="cdate1"></p>
+            </span>
+
+            <span id="ctime">
+                <!-- <p id="id">
+                    </p> -->
+                Time:<p id="ctime1"></p>
+            </span>
+
+            <span id="cpreference">
+                <!-- <p id="idnum">
+                    </p> -->
+                Prefrence: <p id="cprefrence1"></p>
+            </span>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <div id="confirmbox">
+            <!-- <span> <p id="hash">#</p>
+                </p></span> 
+        
+                <span> <p id="name">name</p></span> 
+                </p>
+        
+        
+                 <span><p id="refrenceid">Reference Id</p></span> 
+                </p>
+        
+        
+                 <span><p id="id">Photo Id to carry</p></span> 
+                </p> -->
+
+            <div id="colordiv">
+
+                <span id="hash">
+                    <!-- <p id="dob"></p>
+                    </p> -->
+                    #
+                </span>
+
+                <span id="names">
+                    <!-- <p id="id">
+                    </p> -->
+                    Name
+                </span>
+
+                <span id="referenceid">
+                    <!-- <p id="idnum">
+                    </p> -->
+                    ReferenceID
+                </span>
+
+
+                <span id="idcarry">
+                    <!-- <p id="idnum">
+                    </p> -->
+                    Photo ID to carry
+                </span>
+
+            </div>
+
+
+
+
+            <span id="hashsrno">
+                <!-- <p id="dob"></p>
+                    </p> -->
+                1.
+            </span>
+
+            <span id="finalname1">
+                <!-- <p id="dob"></p>
+                    </p> -->
+                <p id="finalname"></p>
+            </span>
+
+            <span id="finalreferenceid">
+                <!-- <p id="dob"></p>
+                    </p> -->
+                <p id="manualid">53535353</p>
+
+            </span>
+
+
+            <span id="finalid1">
+                <!-- <p id="dob"></p>
+                    </p> -->
+                <p id="finalid">Pan Card</p>
+            </span>
+        </div>
+
+
+        <div id="namebox">
+
+            <p id="patient"></p>
+            <br>
+            <p id="reference">Refernce id:89898988898989 </p>
+        </div>
+
+        <button id="confirmbutton" onclick="confirm12()">Confirm</button>
+
+
+        <div id="instructions">
+
+            <h1><span
+                    style="color: rgb(24, 7, 122); font-size: 30px; font-weight: 900; margin-left: 15px;">Instructions</span>
+            </h1>
+
+            <ol>
+                <li class="listitem">Please carry the photo id card mentioned in your appointment details for
+                    vaccination
+                </li>
+                <li class="listitem">If you have any comborbidities , please carry a medical certificate with you
+                    for
+                    vaccination appointment</li>
+                <li class="listitem">For more infomation , please call cowin helpline number</li>
+            </ol>
+        </div>
+
+
+
+        <button id="closebutton">Close</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="otp.js"></script>
+    <script type="text/javascript" src="welcome.js"></script>
+    <script type="text/javascript" src="form.js"></script>
+    <script type="text/javascript" src="form2.js"></script>
+
+    <script type="text/javascript" src="person1.js"></script>
+    <script type="text/javascript" src="person2.js"></script>
+    <script type="text/javascript" src="slot.js"></script>
+    <script type="text?javascript" src="person1_book.js"></script>
+
+    <script>
+        function func1() {
+
+            let va;
+
+            va = document.getElementById("one").value;
+
+            document.getElementById("time").innerHTML = va;
+            console.log(va);
+            document.getElementById("ctime1").innerHTML = va;
+            document.getElementById("cprefrence1").innerHTML = va;
+
+
+
+        }
+
+
+        function func2() {
+
+            let va;
+
+            va = document.getElementById("two").value;
+            console.log(va);
+
+            document.getElementById("time").innerHTML = va;
+            document.getElementById("ctime1").innerHTML = va;
+            document.getElementById("cprefrence1").innerHTML = va;
+
+
+
+        }
+
+
+
+        function func3() {
+
+            let va;
+
+            va = document.getElementById("three").value;
+            console.log(va);
+
+            document.getElementById("time").innerHTML = va;
+            document.getElementById("ctime1").innerHTML = va;
+            document.getElementById("cprefrence1").innerHTML = va;
+
+
+
+        }
+
+
+
+        function func4() {
+
+            let va;
+
+            va = document.getElementById("four").value;
+            console.log(va);
+
+            document.getElementById("time").innerHTML = va;
+            document.getElementById("ctime1").innerHTML = va;
+            document.getElementById("cprefrence1").innerHTML = va;
+
+
+
+        }
+
+
+
+        function confirm12() {
+
+            document.getElementById("timings").style.display = 'none';
+            document.getElementById("details1").style.display = 'none';
+            document.getElementById("namebox").style.display = 'none';
+            document.getElementById("confirmbutton").style.display = 'none';
+
+            document.getElementById("confirmbox").style.display = 'block';
+            document.getElementById("confirmation").style.display = 'block';
+            document.getElementById("confirmation2").style.display = 'block';
+            document.getElementById("confirmationdetail").style.display = 'block';
+            document.getElementById("appointmentsuccess").style.display = 'block';
+            document.getElementById("instructions").style.display = 'block';
+            document.getElementById("closebutton").style.display = 'block';
+
+
+        }
+    </script>
+
+</body>
+
+</html>

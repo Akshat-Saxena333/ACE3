@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Booking</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+
+    <style>
+        #pin {
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-left: 50px;
+            border-radius: 15px;
+            font-size: 15px;
+            font-weight: 700;
+
+        }
+
+        #district {
+
+
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 15px;
+            font-size: 15px;
+            font-weight: 700;
+
+
+
+
+        }
+
+        #district:focus {
+            background-color: blue;
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        #pin:focus {
+            background-color: blue;
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        #searchbt_dis {
+            margin-top: 25px;
+            margin-left: 55px;
+        }
+
+
+        #searchbt_pin {
+            margin: 10px;
+        }
+
+        #disdiv,
+        #pindiv {
+            display: none;
+        }
+
+
+        #city,
+        #locality {
+
+            margin-left: 50px;
+            padding-right: 100px;
+            border-top-width: 0;
+            border-left-width: 0;
+            border-right-width: 0;
+            font-size: 15px;
+
+        }
+
+        #search_pin {
+
+            border-radius: 5px;
+            color: blue;
+            border-color: blue;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background: white;
+            font-weight: 600;
+            margin-left: 55px;
+            margin-top: 10px;
+        }
+
+        .container {
+            display: grid;
+            background-color: rgb(216, 216, 216);
+            grid-template-columns: 200px 100px 100px 100px 100px 100px 100px 100px;
+            width: 900px;
+            margin: 15px;
+            margin-left: 30px;
+            margin-top: 15px;
+        }
+
+        .item {
+            height: 35px;
+            width: 100px;
+            background-color: rgb(216, 216, 216);
+            text-align: center;
+            padding-top: 15px;
+            /* padding-bottom: 5px; */
+            margin-bottom: 0px;
+            margin: 0%;
+
+        }
+
+        .item1 {
+
+            width: 175px;
+            height: 35px;
+
+            background-color: rgb(216, 216, 216);
+            text-align: center;
+            padding-top: 15px;
+            /* padding-bottom: 5px; */
+            margin-bottom: 0px;
+            margin: 0%;
+        }
+
+        .vaccine {
+
+            color: black;
+            font-size: 15px;
+            margin-top: 0px;
+            font-weight: 600;
+        }
+
+        #appointmentbt {
+
+            color: blue;
+            background-color: white;
+            height: 50px;
+            width: 50px;
+            display: inline;
+            border-color: white;
+            border-width: 0px;
+        }
+
+        #appointment_head {
+            display: inline;
+            color: blue;
+        }
+
+        .na {
+            border-radius: 10px;
+        }
+
+        #hh,
+        #sh {
+            background-color: yellowgreen;
+            border-radius: 10px;
+
+        }
+
+        #id_container {
+
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="appointmentbt"><i class='fa fa-long-arrow-left'></i></button>
+
+    <h1 id="appointment_head">Book Appointment for Vaccination</h1>
+    <br>
+
+
+    <button id="pin" onclick="func() , slot_book()">Search by PIN</button>
+    <button id="district" onclick="func2() , slot_book()">Search by District</button>
+
+    <div id="pindiv">
+
+        <input id="search_pin">
+        <button id="searchbt_pin" onclick="slot_func()">Search</button>
+    </div>
+
+    <div id="disdiv">
+
+        <select name="proof" id="city">
+            <option value="Jammu and Kashmir" class="option">Jammu and Kashmir</option>
+            <option value="Punjab" class="option">Punjab</option>
+            <option value="Haryana" class="option">Haryana</option>
+            <option value="Rajasthan" class="option">Rajasthan</option>
+            <option value="Delhi" class="option">Delhi</option>
+            <option value="Gujarat" class="option">Gujarat</option>
+            <option value="Bengal" class="option">Bengal</option>
+
+
+        </select>
+
+        <select name="proof" id="locality">
+            <option value="Vesu" class="option">Vesu</option>
+            <option value="Adajan" class="option">Adajan</option>
+            <option value="Pal" class="option">Pal</option>
+            <option value="Althan" class="option">Althan</option>
+            <option value="Palanpur Gam" class="option">Palanpur Gam</option>
+            <option value="Piplod" class="option">Piplod</option>
+            <option value="Athwa" class="option">Athwa</option>
+
+
+        </select>
+
+        <button id="searchbt_dis" onclick="slot_func()">Search</button>
+    </div>
+
+    <div id="id_container">
+
+        <div class="container">
+
+
+            <div class="item1">Name of Places</div>
+            <div class="item">4 Jan 2022</div>
+            <div class="item">5 Jan 2022</div>
+            <div class="item">6 Jan 2022</div>
+            <div class="item">7 Jan 2022</div>
+            <div class="item">8 Jan 2022</div>
+            <div class="item">9 Jan 2022</div>
+            <div class="item">10 Jan 2022</div>
+
+            <div class="item1">Healing Hands Hospital</div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="avl" id="hh"
+                    onclick="savedata_covishield(),document.location='person1_book.html'"
+                    value="Healing Hands Hospital">150</button>
+                <p class="vaccine">COVISHIELD</p>
+            </div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item1">Bombay Multi Speciality Hospital</div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item1">Chhabra Multispeciality Hospital</div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item1">Shalby Hospital</div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="avl" id="sh"
+                    onclick="savedata_covaxin(),document.location='person1_book.html'"
+                    value="Shalby Hospital">333</button>
+                <p class="vaccine">COVAXIN</p>
+            </div>
+            <div class="item"><button class="na">NA</button></div>
+            <div class="item"><button class="na">NA</button></div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+    <script>
+
+        function func() {
+
+            let x = document.getElementById("pindiv").style.display = 'block';
+            let y = document.getElementById("disdiv").style.display = 'none';
+        }
+
+        function func2() {
+
+            let z = document.getElementById("pindiv").style.display = 'none';
+            let v = document.getElementById("disdiv").style.display = 'block';
+        }
+
+        function slot_book() {
+
+            document.getElementById("id_container").style.display = 'none';
+        }
+
+        function slot_func() {
+
+            document.getElementById("id_container").style.display = 'block';
+        }
+
+        function savedata_covishield() {
+
+            let hptl;
+
+            hptl = document.getElementById("hh").value;
+            localStorage.setItem("hospital", hptl);
+        }
+
+
+        function savedata_covaxin() {
+
+            let hptl;
+
+            hptl = document.getElementById("sh").value;
+            localStorage.setItem("hospital", hptl);
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <style>
+        #vaccine_icon{
+            height: 35px;
+            width: 35px;
+            display: inline;
+            
+        }
+
+        .dose1{
+            display: inline;
+            margin-top: 0px;
+            margin-left:5px ;
+            margin-bottom: 10px;
+            font-weight: 900;
+            font-size: 25px;
+            color: red;
+
+        }
+
+        .dose1_des{
+            margin-left: 40px;
+            display: inline;
+            padding-top: 200px;
+            font-size: 20px;
+            color: red;
+        }
+
+        #sch_bt{
+            float: right;
+            display: inline;
+            margin-top: 10px;
+            border:solid;
+            border-color: blue;
+            color: blue;
+            border-radius: 20px;
+            padding-left:  20px;
+            padding-right: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-weight: 700;
+            border-width: 0.5px;
+            background-color: white;
+
+
+
+        }
+        #del{
+            height: 50px;
+            width: 50px;
+            border-width: 0px;
+            background-color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="schedule1">
+
+        <img src="Images/vaccination.png" id="vaccine_icon">
+        <h2 class="dose1">Dose 1</h2>
+        <button style='font-size:24px' id="sch_bt"><i class="fa fa-calendar"></i> Schedule</button>
+
+
+        <br>
+        <br>
+        <p class="dose1_des">Appointment not scheduled</p>
+
+
+        <!-- <button style='font-size:24px' id="sch_bt"><i class="fa fa-calendar"></i> Schedule</button> -->
+        <br>
+        <!-- <i class="bi bi-trash"></i> -->
+
+        <button style='font-size:24px' id="del" onclick="delfunc()"><i class='fa fa-trash'></i></button>
+
+       
+
+    </div>
+
+    <script>
+
+        function delfunc(){
+
+            document.getElementById("schedule1").style.display='none';
+        }
+    </script>
+
+</body>                       

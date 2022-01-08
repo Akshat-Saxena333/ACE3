@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccine Form</title>
+
+    <style>
+        #head {
+
+            color: blue;
+            font-size: 25px;
+            text-align: center;
+            margin-top: 50px;
+
+        }
+
+        #div {
+            background-color: rgb(240, 238, 238);
+        }
+
+        #photo {
+
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 50px;
+        }
+
+        #proof {
+
+            margin-left: 50px;
+            padding-right: 1000px;
+            border-top-width: 0;
+            border-left-width: 0;
+            border-right-width: 0;
+
+        }
+
+        .option {
+
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .inpu {
+
+            /* border-bottom: black; */
+            border-top-width: 0;
+            border-left-width: 0;
+            border-right-width: 0;
+            /* border-bottom-width: 50px; */
+
+            margin-left: 50px;
+            margin-right: 10px;
+            padding-right: 959px;
+
+        }
+
+        #pan,
+        #name,
+        #gender,
+        #birth {
+
+
+            margin-left: 50px;
+            padding-right: 1000px;
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+
+        #male {
+
+            margin-left: 50px;
+
+
+        }
+
+        #malelabel,
+        #femalelabel,
+        #otherlabel {
+            font-size: 20px;
+        }
+
+        #warning {
+
+            margin-left: 50px;
+            margin-top: 20px;
+            font-size: 20px;
+            color: red;
+            text-align: center;
+        }
+
+
+        #bt {
+            color: white;
+            background-color: rgb(0, 0, 255);
+            margin-left: 550px;
+            padding-left: 75px;
+            padding-right: 75px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-top: 10px;
+            font-size: 20px;
+            border-radius: 5px;
+
+
+
+        }
+
+        /* #photo{
+
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div id="div">
+        <h1 id="head">Register for Vaccination</h1>
+
+
+        <label for="proof" id="photo">Photo ID Proof</label>
+        <br>
+
+
+        <select name="proof" id="proof">
+            <option value="Aadhar Card" class="option">Aadhar Card</option>
+            <option value="Driving License" class="option">Driving License</option>
+            <option value="PAN Card" class="option">PAN Card</option>
+            <option value="Passport" class="option">Passport</option>
+            <option value="Pension Passbook" class="option">Pension Passbook</option>
+            <option value="NPR Smart Card" class="option">NPR Smart Card</option>
+            <option value="Voter ID" class="option">Voter ID</option>
+
+
+        </select>
+        <br>
+        <br>
+
+        <label id="pan">PAN Card Number</label>
+        <br>
+        <input type="text" class="inpu" id="pannumber">
+
+        <br>
+        <br>
+
+        <label id="name">Name (as in PAN Card)</label>
+        <input class="inpu" id="panname">
+
+        <br>
+        <br>
+
+        <label id="gender">Gender</label>
+        <br>
+        <br>
+        <input type="radio" id="male" name="gend" value="male">
+          <label for="male" id="malelabel">Male</label>
+          <input type="radio" id="female" name="gend" value="female">
+          <label for="female" id="femalelabel">Female</label>
+          <input type="radio" id="other" name="gend" value="other">
+          <label for="other" id="otherlabel">Other</label>
+
+
+
+        <br>
+        <br>
+
+
+        <label id="birth">Year of birth (in YYYY format)</label>
+        <input class="inpu" id="dob">
+
+
+        <div id="warning">
+            Registeration is open only for individuals with age 18 years or older
+
+        </div>
+
+        <button id="bt" onclick="savedata() , document.location='person1.html'">Register</button>
+
+
+        <script>
+
+            function savedata() {
+
+                let dob, panname, pannumber;
+
+                dob = document.getElementById("dob").value;
+                panname = document.getElementById("panname").value;
+                pannumber = document.getElementById("pannumber").value;
+                let select = document.getElementById("proof");
+
+
+                let temp;
+                let gender;
+                let gend = Array();
+                for (let i = 0; i < 3; i++) {
+                    gend[i] = document.getElementsByName("gend")[i];
+                    if (gend[i].checked)
+                        // gender=gend[i].value;
+                        temp = i;
+                }
+
+
+
+
+
+                let user_records = new Array();
+                user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
+                if ((user_records.some((v) => { return v.pannumber == pannumber })) || (user_records.some((v) => { return v.panname == panname }))) {
+                    alert("duplicate data");
+                }
+                else {
+                    user_records.push({
+                        "dob": dob,
+                        "panname": panname,
+                        "pannumber": pannumber,
+                        "abc": gend[temp].value,
+                        "identification": select.value
+
+
+
+                    })
+                    localStorage.setItem("users", JSON.stringify(user_records));
+                }
+
+
+
+                //             localStorage.setItem("dob",dob)
+                // localStorage.setItem("panname",panname)
+                // localStorage.setItem("pannumber",pannumber)
+
+
+
+                // let gender;
+                // let gend = Array();
+                // for(let i=0;i<3;i++)
+                // {
+                //     gend[i] = document.getElementsByName("gend")[i];
+                //     if(gend[i].checked)
+                //         gender=gend[i].value;
+                // }
+
+                // localStorage.setItem("abc",gender);
+                // console.log(localStorage.getItem("abc"));
+
+                // let select = document.getElementById("proof");
+                // console.log(select.value);
+                // localStorage.setItem("identification",select.value);
+
+
+            }
+
+
+
+
+
+        </script>
+
+</body>
+
+</html>

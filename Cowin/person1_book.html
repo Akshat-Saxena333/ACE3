@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person 1 booking confirmation</title>
+
+    <style>
+        #vaccine1 {
+
+            display: inline-block;
+            margin-left: 35px;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        #price1 {
+
+            display: inline-block;
+            margin-left: 75px;
+            font-size: 20px;
+            font-weight: 900;
+
+
+        }
+
+        #date1 {
+
+
+            display: inline-block;
+            margin-left: 200px;
+            font-size: 20px;
+            font-weight: 900;
+
+        }
+
+
+        #time1 {
+
+
+            display: inline-block;
+            margin-left: 200px;
+            font-size: 20px;
+            font-weight: 900;
+
+        }
+
+        #vaccine,
+        #price,
+        #date,
+        #time {
+
+            display: inline;
+            font-size: 20px;
+            font-weight: 900;
+
+        }
+
+
+        #namebox {
+
+            border-style: solid;
+            border-color: darkblue;
+            background-color: white;
+            border-width: 1px;
+            border-radius: 10px;
+            width: 1200px;
+            margin-top: 10px;
+            margin-left: 15px;
+
+        }
+
+        #one,
+        #two,
+        #three,
+        #four {
+
+            margin: 20px;
+            color: rgb(24, 7, 122);
+            font-size: 20px;
+            border-radius: 5px;
+            font-weight: 700;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: white;
+
+        }
+
+        #confirmbutton {
+
+            margin-left: 1115px;
+            margin-top: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+
+        #hash {
+
+            display: inline-block;
+            margin-left: 35px;
+            font-size: 20px;
+            font-weight: 900;
+            padding-top: 5px;
+
+        }
+
+        #hashsrno {
+
+            display: inline-block;
+            margin-left: 35px;
+            font-size: 20px;
+            font-weight: 900;
+            margin-top: 5px;
+        }
+
+        #names {
+
+            display: inline-block;
+            margin-left: 75px;
+            font-size: 20px;
+            font-weight: 900;
+            padding-top: 5px;
+
+
+        }
+
+        #finalname1 {
+
+            display: inline-block;
+            margin-left: 70px;
+            font-size: 20px;
+            font-weight: 900;
+            margin-top: 5px;
+
+
+        }
+
+        #patient {
+
+            margin-left: 15px;
+            font-size: 25px;
+            color: blue;
+            font-weight: 900;
+            margin-top: 15px;
+            margin-bottom: 0px;
+            display: inline-block;
+        }
+
+        #referenceid {
+
+
+            display: inline-block;
+            margin-left: 200px;
+            font-size: 20px;
+            font-weight: 900;
+            padding-top: 5px;
+
+        }
+
+        #finalreferenceid {
+
+
+            display: inline-block;
+            margin-left: 150px;
+            font-size: 20px;
+            font-weight: 900;
+            margin-top: 5px;
+
+        }
+
+        #idcarry {
+
+            display: inline-block;
+            margin-left: 200px;
+            font-size: 20px;
+            font-weight: 900;
+            padding-top: 5px;
+
+
+
+        }
+
+        #finalid1 {
+
+            display: inline-block;
+            margin-left: 225px;
+            font-size: 20px;
+            font-weight: 900;
+            margin-top: 5px;
+
+
+
+        }
+
+
+
+        #price1 {
+
+
+            display: inline-block;
+            margin-left: 200px;
+            font-size: 20px;
+            font-weight: 900;
+
+        }
+
+
+        #cdate {
+
+            display: inline-block;
+            margin-left: 35px;
+            font-size: 20px;
+            font-weight: 900;
+
+        }
+
+        #ctime {
+            display: inline-block;
+            margin-left: 400px;
+            font-size: 20px;
+            font-weight: 900;
+
+        }
+
+        #cpreference {
+
+            display: inline-block;
+            margin-left: 300px;
+            font-size: 20px;
+            font-weight: 900;
+
+
+
+        }
+
+        #confirmbox,
+        #confirmationdetail {
+
+            display: none;
+        }
+
+        #reference {
+            opacity: 0.6;
+            font-size: 20px;
+            display: inline-block;
+
+            margin-left: 15px;
+            margin-top: 10px;
+
+        }
+
+        #selecttime {
+            color: rgb(24, 7, 122);
+            font-size: 30px;
+            margin-left: 15px;
+
+        }
+
+        #appointmentconfirmation {
+            color: rgb(24, 7, 122);
+            font-size: 30px;
+            margin-left: 15px;
+        }
+
+        #confirmation,
+        #confirmation2 {
+            display: none;
+            color: rgb(24, 7, 122);
+            margin-left: 15px;
+        }
+
+        #hospital {
+
+            margin-left: 15px;
+            color: rgb(24, 7, 122);
+            font-size: 25px;
+        }
+
+        #appointmentsuccess {
+
+            color: rgb(24, 7, 122);
+            font-size: 30px;
+            margin-left: 15px;
+            display: none;
+
+        }
+
+        /* #manualid{
+            margin-left: 0px;
+        } */
+
+        #confirmbox {
+
+            border: solid;
+            border-color: black;
+            border-width: 0.5px;
+            margin-top: 5px;
+        }
+
+
+        #colordiv {
+            background-color: rgb(173, 172, 170);
+            margin-bottom: 0px;
+            padding: 0px;
+        }
+
+        #instructions {
+            margin-left: 15px;
+            width: 1200px;
+            display: none;
+        }
+
+        .listitem {
+            padding: 5px;
+        }
+
+        #closebutton {
+
+            margin-left: 1115px;
+            margin-top: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: blue;
+            color: white;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 700;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <div id="timings">
+
+
+        <h1 id="selecttime">Select Time Slot
+        </h1>
+
+        <button value="9:00 am to 11:00 am" onclick="func1()" name="9to11" id="one">9:00 am to 11:00 am</button>
+        <button value="11:00 am to 1:00 pm" onclick="func2()" name="11to1" id="two">11:00 am to 1:00 pm</button>
+        <button value="1:00 pm to 3:00 pm" onclick="func3()" name="1to3" id="three">1:00 pm to 3:00 pm</button>
+        <button value="3:00 pm to 6:00 pm" onclick="func4()" name="3to6" id="four">3:00 pm to 6:00 pm</button>
+
+
+        <h1 id="appointmentconfirmation">Appointment Confirmation</h1>
+
+    </div>
+
+
+
+    <h1 id="appointmentsuccess">
+        Appointment Successful </h1>
+
+
+    <h2 id="confirmation"><span style="color: black; font-size: 30px; font-weight: 600;">Your vaccination appointment is
+            confirmed</span></h2>
+    <p id="confirmation2"> <span style="color: black; font-size: 20px; font-weight: 500;">appointment details have also
+            been sent to your registered mobile number through an SMS</span>
+    </p>
+
+    <h2 id="hospital"></h2>
+
+    <div id="details1">
+
+        <span id="vaccine1">Vaccine Name:
+            <p id="vaccine"></p>
+            </p>
+        </span>
+
+
+        <span id="price1">Vaccine Price:
+            <p id="price">400
+
+            </p>
+
+        </span>
+
+        <span id="date1">Date:
+            <p id="date"></p>
+            </p>
+        </span>
+
+
+        <span id="time1">Time:
+            <p id="time"></p>
+            </p>
+        </span>
+
+
+    </div>
+
+    <div id="confirmationdetail">
+
+
+        <span id="cdate">
+            <!-- <p id="dob"></p>
+            </p> -->
+            Date:
+        </span>
+
+        <span id="ctime">
+            <!-- <p id="id">
+            </p> -->
+            Time:
+        </span>
+
+        <span id="cpreference">
+            <!-- <p id="idnum">
+            </p> -->
+            Prefrence:
+        </span>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div id="confirmbox">
+        <!-- <span> <p id="hash">#</p>
+        </p></span> 
+
+        <span> <p id="name">name</p></span> 
+        </p>
+
+
+         <span><p id="refrenceid">Reference Id</p></span> 
+        </p>
+
+
+         <span><p id="id">Photo Id to carry</p></span> 
+        </p> -->
+
+        <div id="colordiv">
+
+            <span id="hash">
+                <!-- <p id="dob"></p>
+            </p> -->
+                #
+            </span>
+
+            <span id="names">
+                <!-- <p id="id">
+            </p> -->
+                Name
+            </span>
+
+            <span id="referenceid">
+                <!-- <p id="idnum">
+            </p> -->
+                ReferenceID
+            </span>
+
+
+            <span id="idcarry">
+                <!-- <p id="idnum">
+            </p> -->
+                Photo ID to carry
+            </span>
+
+        </div>
+
+
+
+
+        <span id="hashsrno">
+            <!-- <p id="dob"></p>
+            </p> -->
+            1.
+        </span>
+
+        <span id="finalname1">
+            <!-- <p id="dob"></p>
+            </p> -->
+            <p id="finalname">hare krishna</p>
+        </span>
+
+        <span id="finalreferenceid">
+            <!-- <p id="dob"></p>
+            </p> -->
+            <p id="manualid">53535353</p>
+
+        </span>
+
+
+        <span id="finalid1">
+            <!-- <p id="dob"></p>
+            </p> -->
+            <p id="finalid">Pan Card</p>
+        </span>
+    </div>
+
+
+    <div id="namebox">
+
+        <p id="patient">hare krishna</p>
+        <br>
+        <p id="reference">Refernce id:89898988898989 </p>
+    </div>
+
+    <button id="confirmbutton" onclick="confirm()">Confirm</button>
+
+
+    <div id="instructions">
+
+        <h1><span
+                style="color: rgb(24, 7, 122); font-size: 30px; font-weight: 900; margin-left: 15px;">Instructions</span>
+        </h1>
+
+        <ol>
+            <li class="listitem">Please carry the photo id card mentioned in your appointment details for vaccination
+            </li>
+            <li class="listitem">If you have any comborbidities , please carry a medical certificate with you for
+                vaccination appointment</li>
+            <li class="listitem">For more infomation , please call cowin helpline number</li>
+        </ol>
+    </div>
+
+    <button id="closebutton">Close</button>
+
+
+    <script>
+
+        document.getElementById("hospital").innerHTML = localStorage.getItem("hospital");
+
+
+        // let user_records = new Array();
+        // user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
+
+        // document.getElementById("patient").innerHTML = user_records[0].panname;
+        // document.getElementById("dob").innerHTML = user_records[0].dob;
+        // document.getElementById("id").innerHTML = user_records[0].identification;
+
+        function func1() {
+
+            let va;
+
+            va = document.getElementById("one").value;
+
+            document.getElementById("time").innerHTML = va;
+
+
+
+        }
+
+
+        function func2() {
+
+            let va;
+
+            va = document.getElementById("two").value;
+
+            document.getElementById("time").innerHTML = va;
+
+
+
+        }
+
+
+
+        function func3() {
+
+            let va;
+
+            va = document.getElementById("three").value;
+
+            document.getElementById("time").innerHTML = va;
+
+
+
+        }
+
+
+
+        function func4() {
+
+            let va;
+
+            va = document.getElementById("four").value;
+
+            document.getElementById("time").innerHTML = va;
+
+
+
+        }
+
+        function confirm() {
+
+            document.getElementById("timings").style.display = 'none';
+            document.getElementById("details1").style.display = 'none';
+            document.getElementById("namebox").style.display = 'none';
+            document.getElementById("confirmbutton").style.display = 'none';
+
+            document.getElementById("confirmbox").style.display = 'block';
+            document.getElementById("confirmation").style.display = 'block';
+            document.getElementById("confirmation2").style.display = 'block';
+            document.getElementById("confirmationdetail").style.display = 'block';
+            document.getElementById("appointmentsuccess").style.display = 'block';
+            document.getElementById("instructions").style.display = 'block';
+            document.getElementById("closebutton").style.display = 'block';
+
+
+        }
+
+        document.getElementById("patient").innerHTML = localStorage.getItem("")
+    </script>
+
+
+
+
+
+</body>
+
+</html>

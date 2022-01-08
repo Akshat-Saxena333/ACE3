@@ -1,0 +1,164 @@
+#pin {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 50px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 700;
+
+}
+
+#district {
+
+
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 700;
+
+
+
+
+}
+
+#district:focus {
+    background-color: blue;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#pin:focus {
+    background-color: blue;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#searchbt_dis {
+    margin-top: 25px;
+    margin-left: 55px;
+}
+
+
+#searchbt_pin {
+    margin: 10px;
+}
+
+#disdiv,
+#pindiv {
+    display: none;
+}
+
+
+#city,
+#locality {
+
+    margin-left: 50px;
+    padding-right: 100px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    font-size: 15px;
+
+}
+
+#search_pin {
+
+    border-radius: 5px;
+    color: blue;
+    border-color: blue;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: white;
+    font-weight: 600;
+    margin-left: 55px;
+    margin-top: 10px;
+}
+
+.container_slot {
+    display: grid;
+    background-color: rgb(216, 216, 216);
+    grid-template-columns: 200px 100px 100px 100px 100px 100px 100px 100px;
+    width: 900px;
+    margin: 15px;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+
+.item {
+    height: 35px;
+    width: 100px;
+    background-color: rgb(216, 216, 216);
+    text-align: center;
+    padding-top: 15px;
+    /* padding-bottom: 5px; */
+    margin-bottom: 0px;
+    margin: 0%;
+
+}
+
+.item1 {
+
+    width: 175px;
+    height: 35px;
+
+    background-color: rgb(216, 216, 216);
+    text-align: center;
+    padding-top: 15px;
+    /* padding-bottom: 5px; */
+    margin-bottom: 0px;
+    margin: 0%;
+}
+
+.vaccine {
+
+    color: black;
+    font-size: 15px;
+    margin-top: 0px;
+    font-weight: 600;
+}
+
+#appointmentbt {
+
+    color: blue;
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    display: inline;
+    border-color: white;
+    border-width: 0px;
+}
+
+#appointment_head {
+    display: inline;
+    color: blue;
+}
+
+.na {
+    border-radius: 10px;
+}
+
+#hh,
+#sh {
+    background-color: yellowgreen;
+    border-radius: 10px;
+
+}
+
+#id_container {
+
+    display: none;
+}
+
+#slotpg{
+
+    display: none;
+}
