@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create your Google Account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="outer-container">
+        <div class="left-section">s</div>
+        <div class="main-section">
+            <div class="step">
+                <div class="step-simulation">
+                    <div class="container step-container">
+                        <div class="left-content">
+                            <img src="google-logo.svg" alt="logo">
+                            <span style="font-size: 24px;">Create your Google Account</span>
+                            <div class="name-section">
+                                <input class="first-name input-text" type="text" placeholder="First name" name="first-name" required onfocus="toggleInstruction(0)" onblur="validateName(0, this)">
+                                <input class="last-name input-text" type="text" placeholder="Last name" name="last-name" required onfocus="toggleInstruction(1)" onblur="validateName(1, this)">
+                            </div>
+                            
+                            <div class="user-name-container">
+                                <input class="user-name input-text" id="user-name" type="text" placeholder="Username" name="user-name" required minlength="6" maxlength="30" onfocus="toggleInstruction(2, this)" onblur="validateUsername(2, this);">
+                                <span class="email-domain">@gmail.com</span>
+                                <span class="user-name-suggestion" style="font-size: 12px; color: gray; margin-left: 8px;">You can use letters, numbers & periods</span>
+                                <div class="warning-container">
+                                    <svg aria-hidden="true" class="stUf5b qpSchb" fill="red" focusable="false" width="16px" height="16px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+                                    <span style="color: red; font-size: 12px;">Sorry, your username must be between 6 and 30 characters long.</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="user-name" class="custom-email-button" onclick="toggleEmail(this)">Use my current email address instead</label>
+                            </div>
+                            <div>
+                                <div class="password-section" style="margin-top: 40px;">
+                                    <input class="password input-text" type="password" minlength="8" placeholder="Password" name="password" required onfocus="toggleInstruction(3, this)" onblur="validatePassword(3, this)">
+                                    <input class="confirm input-text" type="password" minlength="8" placeholder="Confirm" name="confirm" required onfocus="toggleInstruction(3, this)" onblur="validateConfirm(3, this)">
+                                </div>
+                                <span style="font-size: 12px; color: gray; margin-left: 8px;">Use 8 or more characters with a mix of letters, numbers & symbols</span>
+                            </div>
+                            <div class="check-password">
+                                <input type="checkbox" style="cursor:pointer;" name="show-password" id="show-password" onclick="togglePassword(this)">
+                                <label for="show-password" style="font-size: 14px; cursor: pointer;">Show password</label>
+                            </div>
+                            <div class="options-container">
+                                <span class="sign-in-button">Sign in instead</span>
+                                <button class="button next-button" onclick="validateStep1()">Next</button>
+                            </div>
+                        </div>
+                        <div class="right-content">
+                            <img src="google-ac.svg" alt="illustration" style="width: 100%;">
+                            <div style="font-size: 16px; text-align: center;">One account. All of Google working for you.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-instruction">
+                    <div class="instruction default-instruction">
+                        <div class="instruction-text">Write your First name (i.e. 'Amit', 'Suresh').</div>
+                        <div class="warning-text">First name cannot be empty.</div>
+                        <div><img src="Image-1.jpg" alt="image1" style="width: 100%;"></div>
+                    </div>
+                    <div class="instruction">
+                        <div class="instruction-text">Write your Last name (i.e. 'Patel', 'Parekh').</div>
+                        <div class="warning-text">Last name cannot be empty.</div>
+                        <div><img src="Image-2.jpg" alt="image2" style="width: 100%;"></div>
+                    </div>
+                    <div class="instruction">
+                        <div class="instruction-text">Write unique username without whitespace (i.e. 'amitparekh1203', 'abcxyz123').</div>
+                        <div class="warning-text">Username cannot be empty.</div>
+                        <div><img src="Image-3.jpg" alt="image3" style="width: 100%;"></div>
+                    </div>
+                    <div class="instruction">
+                        <div class="instruction-text">Create strong password which you can remember (i.e. 'amp123456', 'am@01012001'). Rewrite same password in 'Confirm' field</div>
+                        <div class="warning-text">Password cannot be empty.</div>
+                        <div><img src="Image-4.jpg" alt="image4" style="width: 100%;"></div>
+                    </div>
+                    <div class="instruction">
+                        <div class="instruction-text">Click on next after all fields have been filled without errors.</div>
+                        <div class="warning-text"></div>
+                        <div><img src="Image-5.jpg" alt="image5" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-simulation">
+                    <div class="container step-container">
+                        <div class="left-content">
+                            <img src="google-logo.svg" alt="logo">
+                            <span style="font-size: 24px;">Verifying your phone number</span>
+                            
+                            <div style="margin-top: 20px; font-size: 14px;">
+                                For your security, Google wants to make sure that it’s really you. Google will send a text message with a six-digit verification code. <i>Standard rates apply</i>
+                            </div>
+                            
+                            <div class="phone-input-container">
+                                <div class="dialing-code-container">
+                                    <div class="Fy0Xbe" style="background-position: -1px -2245px;" aria-hidden="true"></div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="width: 14px; height:14px;" fill="gray" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                      </svg>
+                                </div>
+                                <input class="phone-number input-text" type="text" placeholder="Phone number" name="phone-number" id="phone-number" minlength="10" maxlength="10" onfocus="toggleInstruction(5)" onblur="validatePhoneNumber(5, this)">
+                            </div>
+                            <div class="options-container">
+                                <span class="back-button" onclick="toggle(0)">Back</span>
+                                <button class="button next-button" onclick="validateStep2()">Next</button>
+                            </div>
+                        </div>
+                        <div class="right-content">
+                            <img src="personal.svg" alt="illustration" style="width: 100%;">
+                            <div style="font-size: 16px; text-align: center;">Your personal info is private &amp; safe</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-instruction">
+                    <div class="instruction default-instruction">
+                        <div class="instruction-text">Enter your working 10 digit phone number (i.e. 9568448445). Google helps you through this phone number in case you forget password or lost google account.</div>
+                        <div class="warning-text">Number must be 10 digit long.</div>
+                        <div><img src="Image-7.jpg" alt="image7" style="width: 100%;"></div>
+                    </div>
+                    <div class="instruction">
+                        <div class="instruction-text">Click on next and wait for a SMS confirmation code on your phone.</div>
+                        <div class="warning-text"></div>
+                        <div><img src="Image-8.jpg" alt="image8" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-simulation">
+                    <div class="container step-container">
+                        <div class="left-content">
+                            <img src="google-logo.svg" alt="logo">
+                            <span style="font-size: 24px;">Verifying your phone number</span>
+                            
+                            <div style="margin-top: 20px; font-size: 14px;">
+                                For your security, Google wants to make sure that it’s really you. Google will send a text message with a six-digit verification code. <i>Standard rates apply</i>
+                            </div>
+                            
+                            <div class="phone-input-container">
+                                <div>
+                                    <div class="Fy0Xbe" style="background-position: -1px -2245px;" aria-hidden="true"></div>
+                                </div>
+                                <span class="phone-number-output"></span>
+                            </div>
+                            <div class="verification-code-container">
+                                <span>G-</span>
+                                <input class="verify-code input-text" type="text" name="verify-code" id="verify-code" style="padding-left: 46px;" onfocus="toggleInstruction(7)" onblur="verifyCode(7, this)" placeholder="Enter verification code" maxlength="6">
+                            </div>
+                            <div style="margin-top: 40px;">
+                                <span class="back-button" onclick="toggle(1)">Back</span>
+                            </div>
+                            <div class="options-container">
+                                <span class="back-button">Call instead</span>
+                                <button class="button next-button" onclick="validateStep3()">Verify</button>
+                            </div>
+                        </div>
+                        <div class="right-content">
+                            <img src="personal.svg" alt="illustration" style="width: 100%;">
+                            <div style="font-size: 16px; text-align: center;">Your personal info is private &amp; safe</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-instruction">
+                    <div class="instruction default-instruction">
+                        <div class="instruction-text">Enter verification code that google send on your entered phone number. For this simulation you can enter "787825" to pass this step.</div>
+                        <div class="warning-text">Entered code is incorrect.</div>
+                        <div><img src="Image-9.jpg" alt="image9" style="width: 100%;"></div>
+                        <div><img src="Image-10.jpg" alt="image10" style="width: 100%; margin-top: 40px;"></div>
+                    </div>
+                    <div class="instruction">
+                        <div class="instruction-text">Click on verify.</div>
+                        <div class="warning-text"></div>
+                        <div><img src="Image-11.jpg" alt="image8" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-simulation">
+                    <div class="container step-container">
+                        <div class="left-content">
+                            <img src="google-logo.svg" alt="logo">
+                            <span class="welcome-text" style="font-size: 24px;">Name, welcome to Google</span>
+                            <div class="email-container">
+                                <svg aria-hidden="true" class="stUf5b" fill="black" focusable="false" width="48px" height="48px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.36 14.83c-1.43-1.74-4.9-2.33-6.36-2.33s-4.93.59-6.36 2.33C4.62 15.49 4 13.82 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8c0 1.82-.62 3.49-1.64 4.83zM12 6c-1.94 0-3.5 1.56-3.5 3.5S10.06 13 12 13s3.5-1.56 3.5-3.5S13.94 6 12 6z"></path></svg>
+                                <span class="email-display" style="color: black; font-size: 12px;">username@gmail.com</span>
+                            </div>
+                            <div class="phone-input-container">
+                                <div class="dialing-code-container">
+                                    <div class="Fy0Xbe" style="background-position: -1px -2245px;" aria-hidden="true"></div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="width: 14px; height:14px;" fill="gray" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                      </svg>
+                                </div>
+                                <input class="phone-number-optional input-text" type="text" placeholder="Phone number(optional)" name="phone-number" minlength="10" maxlength="10">
+                            </div>
+                            <span style="font-size: 12px;">Google will use this number only for account security. Your number won't be visibleto others. You can choose later whether to use it for other purpose.</span>
+                            <div>
+                                <input type="text" class="recovery-email input-text" placeholder="Recovery email address(optional)" name="recovery-email" id="recovery-email">
+                                <span style="font-size: 12px;">We'll use it to keep your account secure.</span>
+                            </div>
+                            <div>
+                                <div class="dob">
+                                    <div style="position: relative;">
+                                        <label for="months">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="width: 14px; height:14px; position:absolute; top:15px; right:10px; z-index:-999;" fill="gray" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                              </svg>
+                                        </label>
+                                        <select class="input-text" name="months" id="birth-month" style="color: rgb(133, 133, 133);" onchange="colorDark(this)" onfocus="toggleInstruction(9)" onblur="validateName(9, this)">
+                                            <option value="" disabled selected style="display: none;">Month</option>
+                                            <option value="1">January</option>
+                                            <option value="2">February</option>
+                                            <option value="3">March</option>
+                                            <option value="4">April</option>
+                                            <option value="5">May</option>
+                                            <option value="6">June</option>
+                                            <option value="7">July</option>
+                                            <option value="8">August</option>
+                                            <option value="9">September</option>
+                                            <option value="10">October</option>
+                                            <option value="11">November</option>
+                                            <option value="12">December</option>
+                                        </select>
+                                    </div>
+                                    <input class="input-text" type="text" id="birth-date" onfocus="toggleInstruction(9)" placeholder="Date" required onblur="validateName(9, this)">
+                                    <input class="input-text" type="text" id="birth-year" onfocus="toggleInstruction(9)" placeholder="Year" required onblur="validateName(9, this)">
+                                </div>
+                                <span style="font-size: 12px;">Your birthday</span>
+                            </div>
+                            <div style="position: relative;">
+                                <label for="gender">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="width: 14px; height:14px; position:absolute; top:15px; right:10px; z-index:-999;" fill="gray" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                      </svg>
+                                </label>
+                                <select class="input-text" name="gender" id="gender" style="color: rgb(133, 133, 133);" onchange="colorDark(this)" onfocus="toggleInstruction(10)" onblur="toggleInstruction(11)">
+                                    <option value="" disabled selected style="display: none;">Gender</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Rather not say">Rather not say</option>
+                                    <option value="Custom">Custom</option>
+                                </select>
+                            </div>
+                            <input class="input-text other-gender" id="custom-gender" type="text" placeholder="What's your gender?" required>
+                            <div style="position: relative;" class="other-gender">
+                                <label for="referMeAs">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="width: 14px; height:14px; position:absolute; top:15px; right:10px; z-index:-999;" fill="gray" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                                      </svg>
+                                </label>
+                                <select class="input-text" name="referMeAs" id="referMeAs" style="color: rgb(133, 133, 133);" onchange="colorDark(this)">
+                                    <option value="" disabled selected style="display: none;">Please refer to me as</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Custom">Custom</option>
+                                </select>
+                            </div>
+                            <div style="margin-top: 40px;">
+                                <a href="https://support.google.com/accounts/answer/1733224?hl=en" target="_blank" class="back-button" style="text-decoration: none;">Why we ask for this information</a>
+                            </div>
+                            <div class="options-container">
+                                <span class="back-button" onclick="toggle(2)">Back</span>
+                                <button class="button next-button" onclick="validateStep4()">Next</button>
+                            </div>
+                        </div>
+                        <div class="right-content">
+                            <img src="personal.svg" alt="illustration" style="width: 100%;">
+                            <div style="font-size: 16px; text-align: center;">Your personal info is private &amp; safe</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-instruction">
+                    <div class="instruction default-instruction">
+                        <div class="instruction-text">First two fields are optional fields. Google ask for recovery phone and email only for security of this account. <br>Enter your birthdate as shown in image. </div>
+                        <div class="warning-text">Birthdate fields cannot be empty.</div>
+                        <div><img src="Image-12.jpg" alt="image12" style="width: 100%;"></div>
+                    </div>
+                    <div class="instruction">
+                        <div class="instruction-text">Choose your gender. You can choose "Rather not to say" or "Custom" if you don't want to reveal your gender or write custom gender respectively.</div>
+                        <div class="warning-text">Gender field must be selected.</div>
+                        <div><img src="Image-13.jpg" alt="image13" style="width: 100%;"></div>
+                    </div>
+                    <div class="instruction">
+                        <div class="instruction-text">Click on next if you have entered all data correctly.</div>
+                        <div class="warning-text"></div>
+                        <div><img src="Image-8.jpg" alt="image8" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-simulation">
+                    <div class="container step-container">
+                        <div class="left-content">
+                            <img src="google-logo.svg" alt="logo">
+                            <span class="welcome-text" style="font-size: 24px;">Privacy and Terms</span>
+                            <span style="font-size: 14px;">To create a Google Account, you’ll need to agree to the <a href="https://policies.google.com/terms?hl=en&gl=IN" target="_blank" style="text-decoration: none; color: #1a73e8; font-weight: 500;">Terms of Service</a> below.</span>
+                            <span style="font-size: 14px;">In addition, when you create an account, we process your information as described in our <a href="https://policies.google.com/privacy?hl=en&gl=IN" target="_blank" style="text-decoration: none; color: #1a73e8; font-weight: 500;">Privacy Policy</a>, including these key points:</span>
+                            <span style="font-size: 16px; font-weight: 700;">Data we process when you use Google</span>
+                            <ul style="font-size: 14px;">
+                                <li>When you set up a Google Account, we store information you give us like your name, email address, and telephone number.</li>
+                                <li>When you use Google services to do things like write a message in Gmail or comment on a YouTube video, we store the information you create.</li>
+                                <li>When you search for a restaurant on Google Maps or watch a video on YouTube, for example, we process information about that activity – including information like the video you watched, device IDs, IP addresses, cookie data, and location.</li>
+                                <li>We also process the kinds of information described above when you use apps or sites that use Google services like ads, Analytics, and the YouTube video player.</li>
+                            </ul>
+                            <span style="font-size: 16px; font-weight: 700;">Data we process when you use Google</span>
+                            <span style="font-size:14px">We process this data for the purposes described in <a href="https://policies.google.com/privacy?hl=en&gl=IN" target="_blank" style="text-decoration: none; color: #1a73e8; font-weight: 500;">our policy</a>, including to:</span>
+                            <ul style="font-size: 14px;">
+                                <li>Help our services deliver more useful, customized content such as more relevant search results;</li>
+                                <li>Improve the quality of our services and develop new ones;</li>
+                                <li>Deliver personalized ads, depending on your account settings, both on Google services and on sites and apps that partner with Google;</li>
+                                <li>Improve security by protecting against fraud and abuse; and</li>
+                                <li>Conduct analytics and measurement to understand how our services are used. We also have partners that measure how our services are used. <a href="https://policies.google.com/privacy/google-partners?hl=en&gl=IN" target="_blank" style="text-decoration: none; color: #1a73e8; font-weight: 500;">Learn more</a> about these specific advertising and measurement partners.</li>
+                            </ul>
+                            <span style="font-size: 16px; font-weight: 700;">Combining data</span>
+                            <span style="font-size: 14px;">We also combine this data among our services and across your devices for these purposes. For example, depending on your account settings, we show you ads based on information about your interests, which we can derive from your use of Search and YouTube, and we use data from trillions of search queries to build spell-correction models that we use across all of our services.</span>
+                            <span style="font-size: 16px; font-weight: 700;">You’re in control</span>
+                            <span style="font-size: 14px;">Depending on your account settings, some of this data may be associated with your Google Account and we treat this data as personal information. You can control how we collect and use this data now by clicking “More Options” below. You can always adjust your controls later or withdraw your consent for the future by visiting My Account (myaccount.google.com).</span>
+                            <div style="margin-top: 40px; display: flex;">
+                                <div class="back-button" style="display: flex;" onclick="moreOptions()">
+                                    <div>More options</div>
+                                    <div style="margin-left: 10px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="chevron-options bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                    </svg></div>
+                                </div>
+                            </div>
+                            <div class="more-options none">
+                                <span style="font-size: 14px;">Customize your Google experience by confirming your personalization settings and the data stored with your account.</span>
+                                <span style="font-size: 14px;">You can always learn more about these options, adjust them, and review your activity in your Google Account (account.google.com).</span>
+                                <div class="sub-heading-with-icon"><svg aria-hidden="true" class="stUf5b d7Plee" fill="#5f6368" focusable="false" width="20px" height="20px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M13,3c-4.76,0-8.64,3.69-8.97,8.37L2.21,9.54l-1.41,1.41L5,15.16l4.21-4.21L7.79,9.54L6.04,11.3C6.39,7.76,9.37,5,13,5 c3.87,0,7,3.13,7,7s-3.13,7-7,7c-1.93,0-3.68-0.79-4.94-2.06l-1.42,1.42C8.27,19.99,10.51,21,13,21c4.97,0,9-4.03,9-9 C22,7.03,17.97,3,13,3z M4.71,12c-0.01,0.01-0.01,0.02-0.02,0.03L4.66,12H4.71z"></path><polygon points="14,7 12,7 12,12.41 15.79,16.21 17.21,14.79 14,11.59 "></polygon></svg><span style="font-size: 16px; font-weight: 700;">Web & App Activity</span></div>
+                                <span style="font-size: 14px;">Saves your activity on Google sites and apps, including searches and associated info like location. Also saves activity from sites, apps, and devices that use Google services, including Chrome history. This helps Google provide better search results, suggestions, and personalization across Google services. Activity older than 18 months will be automatically deleted. You can change your auto-delete option, stop saving activity, or delete it manually at account.google.com.
+                                </span>
+                                <div class="radio-container">
+                                    <input class="pointer" type="radio" name="web-activity" id="save-web-activity" style="margin-right: 10px; transform: scale(1.3);">
+                                    <div class="pointer"><label for="save-web-activity">Save my Web & App activity in my Google Account</label></div>
+                                </div>
+                                <div class="radio-container">
+                                    <input class="pointer" type="radio" name="web-activity" id="dont-save-web-activity" style="margin-right: 10px; transform: scale(1.3);">
+                                    <div class="pointer"><label for="dont-save-web-activity">Don't save my Web & App activity in my Google Account</label></div>
+                                </div>
+                                
+                            </div>
+                            <div class="options-container">
+                                <span class="back-button" onclick="toggle(3)">Cancel</span>
+                                <button class="button next-button" onclick="validateStep5()">I agree</button>
+                            </div>
+                        </div>
+                        <div class="right-content">
+                            <img src="privacy.svg" alt="illustration" style="width: 100%;">
+                            <div style="font-size: 16px; text-align: center;">You’re in control of the data we collect & how it’s used</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-instruction">
+                    <div class="instruction default-instruction">
+                        <div class="instruction-text">First two fields are optional fields. Google ask for recovery phone and email only for security of this account. <br>Enter your birthdate as shown in image. </div>
+                        <div class="warning-text">Birthdate fields cannot be empty.</div>
+                        <div><img src="Image-12.jpg" alt="image12" style="width: 100%;"></div>
+                    </div>
+                    <div class="instruction">
+                        <div class="instruction-text">Choose your gender. You can choose "Rather not to say" or "Custom" if you don't want to reveal your gender or write custom gender respectively.</div>
+                        <div class="warning-text">Gender field must be selected.</div>
+                        <div><img src="Image-13.jpg" alt="image13" style="width: 100%;"></div>
+                    </div>
+                    <div class="instruction">
+                        <div class="instruction-text">Click on next if you have entered all data correctly.</div>
+                        <div class="warning-text"></div>
+                        <div><img src="Image-8.jpg" alt="image8" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
