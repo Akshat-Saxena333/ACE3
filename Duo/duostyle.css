@@ -241,6 +241,23 @@ strong{
     position: relative;
 }
 
+#Instruction11{
+    background-color: black;
+    width: 19.4vw;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 15%;
+    padding-bottom: 10%;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border-radius: 5%;
+    height: 46vh;
+    display: none;
+}
+
 .giveaccess0, .giveaccess1, .giveaccess2, .giveaccess3{
     margin-top: 10%;
     margin-bottom: 42%;
@@ -275,12 +292,10 @@ strong{
     background-color: white;
 }
 
-/* .giveaccess8{
-    margin-top: 10px;
-    background-color: white;
-} */
-
-
+.giveaccess11{
+    margin-top: -76%;
+    padding-bottom: 6%;
+}
 
 .overlapping7 {
     position: inherit;
@@ -666,14 +681,6 @@ hr{
     padding-top: 4px;
 }
 
-
-
-
-
-
-
-
-
 #myInput {
     background-image: url(/css/searchicon.png);
     background-position: 10px 12px;
@@ -689,25 +696,24 @@ hr{
   }
   
   #myUL {
-    /* Remove default list styling */
     list-style-type: none;
     padding: 0;
     margin: 0;
   }
   
   #myUL li a {
-    border: 1px solid #ddd; /* Add a border to all links */
-    margin-top: -1px; /* Prevent double borders */
-    background-color: #f6f6f6; /* Grey background color */
-    padding: 12px; /* Add some padding */
-    text-decoration: none; /* Remove default text underline */
-    font-size: 18px; /* Increase the font-size */
-    color: black; /* Add a black text color */
-    display: block; /* Make it into a block element to fill the whole list */
+    border: 1px solid #ddd;
+    margin-top: -1px; 
+    background-color: #f6f6f6; 
+    padding: 12px;
+    text-decoration: none; 
+    font-size: 18px; 
+    color: black; 
+    display: block; 
   }
   
   #myUL li a:hover:not(.header) {
-    background-color: #eee; /* Add a hover effect to all links, except for headers */
+    background-color: #eee; 
   }
 
   #backarrow{
@@ -728,12 +734,6 @@ hr{
     margin-left: 20px;
     margin-top: -87px;
   }
-
-  /* .dots{
-    color: grey;
-    margin-top: 3px;
-    margin-left: 217px;
-  } */
 
  #first_letter{
     font-size: 52px;
@@ -825,20 +825,6 @@ hr{
     font-size: 14px;
     float: left;
 }
-
-/* .fa-phone{
-    height: 31px;
-    width: 47px;
-    padding-top: 14px;
-    border-radius: 25px;
-    background-color: transparent;
-    border: 1px solid;
-    border-color: grey;
-    margin-top: 150px;
-    margin-left: 22px;
-    transform: rotate(90deg);
-    float: left;
-} */
 
 .fa-video{
     background-color: #a8c7fb;
@@ -1385,36 +1371,89 @@ hr{
     }
 }
 
-
-/* .open{
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    /* transform: translate(-50%,-50%); */
-    /* z-index: 1000; */
-/* } */
-
-/* .popup{
-    display: none;
-    width: 350px;
-    height: 280px;
-    background: blanchedalmond;
-    border-radius: 10px;
-    box-sizing: border-box;
-    z-index: 2;
-    text-align: center;
-    opacity: 0;
-    top: -200%;
-    transform: translate(-50%,-50%) scale(0.5);
-    transition: opacity 300ms ease-in-out,top 1000ms ease-in-out;
+#person1{
+    width: 19vw;
+    height: 45vw;
+    margin-top: -16px;
+    border-radius: 16px;
+    z-index: 1;
 }
 
-.popup.active{
-    opacity: 1;
-    top: 50%;
-    transform: translate(-50%,-50%) scale(1);
-    transition: transform 300ms cubic-bezier(0.18,0.89,0.43,1.19);
-} */
+#person2{
+    width: 123px;
+    float: right;
+    margin-top: -222%;
+    margin-right: 7px;
+    z-index: 15;
+    position: relative;
+    border-radius: 10%;
+}
 
+#watermark{
+    background: transparent;
+    position: relative;
+    color: grey;
+    margin-right: 24px;
+    top: 2px;
+    float: right;
+    z-index: 15;
+}
 
+.fa-sync{
+    z-index: 3;
+    position: relative;
+    float: left;
+    color: white;
+    background-color: grey;
+    width: 30px;
+    height: 24px;
+    padding-top: 9px;
+    border-radius: 20px;
+    margin-left: 184px;
+    margin-top: -52px;
+}
+
+.micoff{
+    float: left;
+    margin-left: 75px;
+    z-index: 12;
+    position: relative;
+    margin-top: -52px;
+    font-size: 13px;
+    width: 34px;
+    height: 24px;
+    padding-top: 10px;
+}
+
+.fa-video-slash{
+    float: left;
+    margin-top: -51px;
+    margin-left: 29px;
+    height: 23px;
+    width: 30px;
+    padding-top: 7px;
+    border-radius: 25px;
+    position: relative;
+    background: grey;
+    color: white;
+    z-index: 48;
+}
+
+.end{
+    margin-top: -58px;
+    margin-left: 122px;
+    font-size: 14px;
+    width: 45px;
+}
+
+.dots3{
+    margin-top: -53px;
+    font-size: 13px;
+    z-index: 20;
+    position: relative;
+    margin-left: 233px;
+    padding-top: 11px;
+    height: 10px;
+    width: 10px;
+}
   
