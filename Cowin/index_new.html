@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OTP</title>
+    <title>Cowin</title>
 
     <!-- <script type="text?javascript" src="person1_book.js"></script> -->
 
@@ -87,7 +87,7 @@
         #google_translate_element {
 
             text-align: center;
-            background-color: blue;
+            background-color: rgb(255, 255, 255);
             float: left;
         }
     </style>
@@ -121,20 +121,25 @@ function googleTranslateElementInit() {
             src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
+        <br>
+
+
 
 
         <div id="otppage">
+
+            <img src="images1/login-screen.svg" id="loginimg">
             <h1 id="head">Register or Sign in for Vaccination</h1>
 
             <p id="otp">An OTP will be sent to your mobile number for verification</p>
 
-            <input type="text" id="number" placeholder="Enter the number here">
+            <input type="text" id="number" placeholder="Enter the number here" required>
             <br>
             <br>
 
 
 
-            <button id="bt1" onclick="otppage() , masterfun1()">Get OTP</button>
+            <input id="bt1" type="submit"  value="Get OTP"  onclick="otppage() , masterfun1()">
 
         </div>
 
@@ -149,11 +154,11 @@ function googleTranslateElementInit() {
             <img src="images1/welcome-screen.svg" id="welcomeimg">
             <h1 id="welcomehead">Welcome</h1>
 
-            <button id="bt" onclick="welcomepg()">Register Member</button>
+            <button id="bt" onclick="welcomepg(), masterfun2()">Register Member</button>
 
             <h2 id="note"> NOTE</h2>
 
-            <ol>
+            <ol id="ol">
                 <li class="wlcm">All communications and reminders are sent to your Registered Mobile Number. Please make
                     sure that the mobile number used for registration is active.</li>
                 <li class="wlcm">One registration per person is sufficient. Please do not register with multiple mobile
@@ -194,7 +199,7 @@ function googleTranslateElementInit() {
                 <br>
 
                 <p id="pan">PAN Card Number</p>
-                
+
                 <input type="text" class="inpu" id="pannumber">
 
                 <br>
@@ -231,7 +236,7 @@ function googleTranslateElementInit() {
 
                 </div>
 
-                <button id="bt3" onclick="savedata() , formpg()">Register</button>
+                <button id="bt3" onclick="savedata() , formpg() , masterfun3()">Register</button>
             </div>
 
 
@@ -251,6 +256,7 @@ function googleTranslateElementInit() {
         <!-- person1 -->
 
         <div id="person1pg">
+            <br>
 
             <div id="delperson1">
 
@@ -286,7 +292,7 @@ function googleTranslateElementInit() {
                                         </span>
 
                                         <span id="idnum1"><span style="font-size: 20px;">ID Number</span>
-                                            <p id="idnum">
+                                            <p id="idnum">55656565
                                             </p>
                                         </span>
 
@@ -309,7 +315,7 @@ function googleTranslateElementInit() {
 
                         <img src="Images/vaccination.png" id="vaccine_icon">
                         <h2 class="dose1">Dose 1</h2>
-                        <button style='font-size:24px' id="sch_bt" onclick="schedule11()"><i class="fa fa-calendar"></i>
+                        <button style='font-size:24px' id="sch_bt" onclick="schedule11(), masterfun5()"><i class="fa fa-calendar"></i>
                             Schedule</button>
 
 
@@ -338,7 +344,7 @@ function googleTranslateElementInit() {
 
             <!-- <button id="schedule" onclick="" -->
 
-            <button id="bt4" onclick="person1pg()">Add Member</button>
+            <button id="bt4" onclick="person1pg() , masterfun4()">Add Member</button>
         </div>
 
 
@@ -349,6 +355,7 @@ function googleTranslateElementInit() {
 
 
         <div id="person2pg">
+            <br>
 
 
             <div id="delperson21">
@@ -385,7 +392,7 @@ function googleTranslateElementInit() {
                                         </span>
 
                                         <span id="idnum1"><span style="font-size: 20px;">ID Number</span>
-                                            <p class="idnum">
+                                            <p class="idnum">55596
                                             </p>
                                         </span>
 
@@ -404,7 +411,7 @@ function googleTranslateElementInit() {
 
                         <img src="Images/vaccination.png" id="vaccine_icon">
                         <h2 class="dose1">Dose 1</h2>
-                        <button style='font-size:24px' id="sch_bt" onclick="schedule21()"><i class="fa fa-calendar"></i>
+                        <button style='font-size:24px' id="sch_bt" onclick="schedule21() ,masterfun5()"><i class="fa fa-calendar"></i>
                             Schedule</button>
 
 
@@ -472,7 +479,7 @@ function googleTranslateElementInit() {
                                         </span>
 
                                         <span id="idnum22"><span style="font-size: 20px;">ID Number</span>
-                                            <p id="idnum2">
+                                            <p id="idnum2">66697
                                             </p>
                                         </span>
 
@@ -490,7 +497,7 @@ function googleTranslateElementInit() {
 
                         <img src="Images/vaccination.png" id="vaccine_icon">
                         <h2 class="dose1">Dose 1</h2>
-                        <button style='font-size:24px' id="sch_bt" onclick="schedule22()"><i class="fa fa-calendar"></i>
+                        <button style='font-size:24px' id="sch_bt" onclick="schedule22() , masterfun5()"><i class="fa fa-calendar"></i>
                             Schedule</button>
 
 
@@ -587,7 +594,7 @@ function googleTranslateElementInit() {
 
                 </div>
 
-                <button id="bt5" onclick="savedata2() , form2pg()">Register</button>
+                <button id="bt5" onclick="savedata2() , form2pg() , masterfun3()">Register</button>
             </div>
 
         </div>
@@ -664,7 +671,7 @@ function googleTranslateElementInit() {
 
                     <div class="item1">Healing Hands Hospital</div>
                     <div class="item"><button class="na">NA</button></div>
-                    <div class="item"><button class="avl" id="hh" onclick="savedata_covishield()"
+                    <div class="item"><button class="avl" id="hh" onclick="savedata_covishield() , masterfun6()"
                             value="Healing Hands Hospital">150</button>
                         <p class="vaccine">COVISHIELD</p>
                     </div>
@@ -694,7 +701,7 @@ function googleTranslateElementInit() {
                     <div class="item"><button class="na">NA</button></div>
                     <div class="item"><button class="na">NA</button></div>
                     <div class="item"><button class="na">NA</button></div>
-                    <div class="item"><button class="avl" id="sh" onclick="savedata_covaxin()"
+                    <div class="item"><button class="avl" id="sh" onclick="savedata_covaxin() , masterfun6()"
                             value="Shalby Hospital">333</button>
                         <p class="vaccine">COVAXIN</p>
                     </div>
@@ -757,7 +764,7 @@ function googleTranslateElementInit() {
                 </span>
 
 
-                <span id="price1">Vaccine Price:
+                <span id="proice1"><span style="margin-left: 37px; font-weight: 900;">Vaccine Price:</span>
                     <p id="price">400
 
                     </p>
@@ -891,7 +898,7 @@ function googleTranslateElementInit() {
                 <p id="reference">Refernce id:89898988898989 </p>
             </div>
 
-            <button id="confirmbutton" onclick="confirm12()">Confirm</button>
+            <button id="confirmbutton" onclick="confirm12() , masterfun7()">Confirm</button>
 
 
             <div id="instructions">
@@ -913,7 +920,7 @@ function googleTranslateElementInit() {
 
 
 
-            <button id="closebutton">Close</button>
+            <button id="closebutton" onclick="congofunc()">Close</button>
         </div>
 
 
@@ -933,6 +940,68 @@ function googleTranslateElementInit() {
             <img src="">
         </div>
 
+        <div id="guide3">
+            <p class="guide33">Fill out the fields in the same manner as given in the illustration</p>
+            <img src="images1/Screenshot (157)new.png">
+            <p class="guide33">Now click on register to confirm your registeration</p>
+        </div>
+
+
+        <div id="guide4">
+
+            <p class="guide44">This page confirms that the registeration is done successfully</p>
+            <img src="images1/Screenshot (158).png">
+            <p class="guide44">User can delete his registered name by clicking on delete button</p>
+            <p class="guide44">To add another member click on 'Add Member'</p>
+            <p class="guide44">To schedule vaccination date click on 'Schedule</p>
+
+        </div>
+
+
+        <div id="guide5">
+
+            <p class="guide55">To get a particular location using Pincode , click 'Search by pin'</p>
+            <p class="guide55">Else to search by district , click 'Search by district'</p>
+            <img src="images1/Screenshot (159)new.png">
+            <p class="guide55">If vaccine is available it is in green coloured division else in white coloured division</p>
+            <p class="guide55">Number of vaccines available is displayed on the green division</p>
+            <p class="guide55">Name of vaccine is also written under the green division</p>
+        </div>
+
+
+        <div id="guide6">
+
+            <p class="guide66">This window is for choosing the time slot</p>
+            <p class="guide66">On of four choices of time slots should be choosen , and that will be displayed in time section</p>
+            <img src="images1/Screenshot (160).png">
+            <p class="guide66">Person's name and name of vaccine can be verified from this page</p>
+            <p class="guide66">For confirming the appointment , the 'Confirm' button should be clicked</p>
+            
+
+            
+        </div>
+
+        <div id="guide7">
+
+       <p class="guide77">This page indicates that the appointment is confimed</p>
+       <img src="images1/Screenshot (161).png">
+       <p class="guide77">Alotted time slot is mentioned on the appointment confirmation page</p>
+       <p class="guide77">Valid photo ID to be carried is also mentioned</p>
+       
+       
+
+            
+        </div>
+
+
+    </div>
+
+    <div id="congrats">
+
+
+        <img src="images1/congrats.jpg" id="congoimg">
+
+        <h1 id="congrats1">You have completed this simulation successfully!</h1>
     </div>
 
 
@@ -1054,6 +1123,62 @@ function googleTranslateElementInit() {
             document.getElementById("guide2").style.display = 'block';
 
         }
+
+        function masterfun2() {
+
+            document.getElementById("guide2").style.display = 'none';
+            document.getElementById("guide3").style.display = 'block';
+
+
+        }
+
+        function masterfun3() {
+
+            document.getElementById("guide3").style.display = 'none';
+            document.getElementById("guide4").style.display = 'block';
+
+
+        }
+
+        function masterfun4(){
+
+            document.getElementById("guide4").style.display = 'none';
+            document.getElementById("guide3").style.display = 'block';
+
+        }
+
+        function masterfun5(){
+
+document.getElementById("guide4").style.display = 'none';
+document.getElementById("guide5").style.display = 'block';
+document.getElementById("guide3").style.display = 'none';
+
+}
+
+function masterfun6(){
+
+    document.getElementById("guide5").style.display = 'none';
+    document.getElementById("guide6").style.display = 'block';
+
+}
+
+function masterfun7(){
+
+document.getElementById("guide6").style.display = 'none';
+document.getElementById("guide7").style.display = 'block';
+
+}
+
+
+function congofunc(){
+
+    document.getElementById("congrats").style.display = 'block';
+    document.getElementById("master").style.display = 'none';
+    document.getElementById("guide").style.display = 'none';
+
+}
+
+
     </script>
 
 </body>

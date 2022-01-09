@@ -45,9 +45,9 @@ function savedata2() {
 
     // var name2;
 
-    // document.getElementsByClassName('name2_pg2')[0].innerHTML = panname;
-    // document.getElementsByClassName('dob2')[0].innerHTML = dob;
-    // document.getElementsByClassName('id2')[0].innerHTML =  select.value
+    document.getElementsByClassName('name2_pg2')[0].innerHTML = panname;
+    document.getElementsByClassName('dob2')[0].innerHTML = dob;
+    document.getElementsByClassName('id2')[0].innerHTML =  select.value
     name2=panname;
     choice=select.value;
 
@@ -99,3 +99,21 @@ function schedule21(){
 
 
 }
+
+
+function schedule22(){
+
+    localStorage.setItem("person1_name",name2);
+   
+    localStorage.setItem("choice1",choice2);
+
+
+    document.getElementById("slotpg").style.display='block';
+    document.getElementById("person2pg").style.display='none';
+
+
+
+
+}
+
+

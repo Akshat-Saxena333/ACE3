@@ -21,7 +21,7 @@
 #proof {
 
     margin-left: 50px;
-    padding-right: 500px;
+    padding-right: 607px;
     border-top-width: 0;
     border-left-width: 0;
     border-right-width: 0;
@@ -34,20 +34,19 @@
     font-weight: 600;
 }
 
-/* .inpu {
+.inpu {
 
-    /* border-bottom: black; */
     border-top-width: 0;
     border-left-width: 0;
     border-right-width: 0;
     /* border-bottom-width: 50px; */
 
-    
+    margin-left: 50px;
     margin-right: 10px;
-    padding-right: 5px;
-    max-width: 5px;
+    padding-right: 959px;
+    
 
-} */
+}
 
 #pan,
 #name,
@@ -55,11 +54,9 @@
 #birth {
 
 
-    margin-left: 5px;
-    padding-right: 50px;
+    margin-left: 50px;
     font-size: 20px;
     font-weight: bold;
-
 }
 
 #male {
@@ -89,7 +86,7 @@
 #bt3 {
     color: white;
     background-color: rgb(0, 0, 255);
-    margin-left: 550px;
+    margin-left: 243px;
     padding-left: 75px;
     padding-right: 75px;
     padding-top: 5px;
@@ -111,6 +108,6 @@
 
 #div{
 
-    max-width: 500px;
+    max-width: 790px;
 
 }

@@ -89,6 +89,8 @@ legend {
 
 #person1pg{
     display: none;
+    margin-top: 5px;
+   
 }
 #del{
     height: 50px;
@@ -152,6 +154,18 @@ legend {
     width: 50px;
     border-width: 0px;
     background-color: white;
+}
+
+
+#delperson1{
+
+    width: 790px;
+}
+
+
+.col-md-6{
+
+    max-width: 768px;
 }
 
 /* #person1pg{

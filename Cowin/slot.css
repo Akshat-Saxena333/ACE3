@@ -86,16 +86,16 @@
 .container_slot {
     display: grid;
     background-color: rgb(216, 216, 216);
-    grid-template-columns: 200px 100px 100px 100px 100px 100px 100px 100px;
-    width: 900px;
-    margin: 15px;
-    margin-left: 30px;
+    grid-template-columns: 165px 85px 98px 85px 88px 88px 88px 88px;
+    max-width: 70px;
+    margin: 10px;
+    margin-left: 2px;
     margin-top: 15px;
 }
 
 .item {
     height: 35px;
-    width: 100px;
+    width: 98px;
     background-color: rgb(216, 216, 216);
     text-align: center;
     padding-top: 15px;
@@ -156,6 +156,7 @@
 #id_container {
 
     display: none;
+    width: 770px;
 }
 
 #slotpg{
