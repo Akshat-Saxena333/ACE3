@@ -12,7 +12,18 @@
 </head>
 <body>
     <div class="outer-container">
-        <div class="left-section">s</div>
+        <div class="left-section">
+            <h1>How to create Google account</h1>
+            <div class="step-nav">
+                <div class="step-opt" onclick="toggle(0)" style="background: #0000b5;"><span>1.</span><span>Enter name, choose email and set password</span></div>
+                <div class="step-opt" onclick="toggle(1)"><span>2.</span><span>Enter phone number</span></div>
+                <div class="step-opt" onclick="toggle(2)"><span>3.</span><span>Enter verification code</span></div>
+                <div class="step-opt" onclick="toggle(3)"><span>4.</span><span>Enter D.O.B. and gender</span></div>
+                <div class="step-opt" onclick="toggle(4)"><span>5.</span><span>Privacy policy</span></div>
+                <div class="step-opt" onclick="toggle(5)"><span>6.</span><span>Congratulation! You're done</span></div>
+            </div>
+            <div id="google_translate_element"></div>
+        </div>
         <div class="main-section">
             <div class="step">
                 <div class="step-simulation">
@@ -45,7 +56,7 @@
                                 <span style="font-size: 12px; color: gray; margin-left: 8px;">Use 8 or more characters with a mix of letters, numbers & symbols</span>
                             </div>
                             <div class="check-password">
-                                <input type="checkbox" style="cursor:pointer;" name="show-password" id="show-password" onclick="togglePassword(this)">
+                                <input type="checkbox" style="cursor:pointer; transform: scale(1.3);" name="show-password" id="show-password" onclick="togglePassword(this)">
                                 <label for="show-password" style="font-size: 14px; cursor: pointer;">Show password</label>
                             </div>
                             <div class="options-container">
@@ -212,7 +223,7 @@
                                                 <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
                                               </svg>
                                         </label>
-                                        <select class="input-text" name="months" id="birth-month" style="color: rgb(133, 133, 133);" onchange="colorDark(this)" onfocus="toggleInstruction(9)" onblur="validateName(9, this)">
+                                        <select class="input-text" name="months" id="birth-month" style="color: rgb(133, 133, 133);" onchange="colorDark(this)" onfocus="toggleInstruction(9)" onblur="validateName(9, this);toggleInstruction(9)">
                                             <option value="" disabled selected style="display: none;">Month</option>
                                             <option value="1">January</option>
                                             <option value="2">February</option>
@@ -228,7 +239,7 @@
                                             <option value="12">December</option>
                                         </select>
                                     </div>
-                                    <input class="input-text" type="text" id="birth-date" onfocus="toggleInstruction(9)" placeholder="Date" required onblur="validateName(9, this)">
+                                    <input class="input-text" type="text" id="birth-date" onfocus="toggleInstruction(9)" placeholder="Date" required onblur="validateName(9, this);toggleInstruction(9)">
                                     <input class="input-text" type="text" id="birth-year" onfocus="toggleInstruction(9)" placeholder="Year" required onblur="validateName(9, this)">
                                 </div>
                                 <span style="font-size: 12px;">Your birthday</span>
@@ -331,19 +342,52 @@
                             </div>
                             <div class="more-options none">
                                 <span style="font-size: 14px;">Customize your Google experience by confirming your personalization settings and the data stored with your account.</span>
+                                
                                 <span style="font-size: 14px;">You can always learn more about these options, adjust them, and review your activity in your Google Account (account.google.com).</span>
                                 <div class="sub-heading-with-icon"><svg aria-hidden="true" class="stUf5b d7Plee" fill="#5f6368" focusable="false" width="20px" height="20px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M13,3c-4.76,0-8.64,3.69-8.97,8.37L2.21,9.54l-1.41,1.41L5,15.16l4.21-4.21L7.79,9.54L6.04,11.3C6.39,7.76,9.37,5,13,5 c3.87,0,7,3.13,7,7s-3.13,7-7,7c-1.93,0-3.68-0.79-4.94-2.06l-1.42,1.42C8.27,19.99,10.51,21,13,21c4.97,0,9-4.03,9-9 C22,7.03,17.97,3,13,3z M4.71,12c-0.01,0.01-0.01,0.02-0.02,0.03L4.66,12H4.71z"></path><polygon points="14,7 12,7 12,12.41 15.79,16.21 17.21,14.79 14,11.59 "></polygon></svg><span style="font-size: 16px; font-weight: 700;">Web & App Activity</span></div>
                                 <span style="font-size: 14px;">Saves your activity on Google sites and apps, including searches and associated info like location. Also saves activity from sites, apps, and devices that use Google services, including Chrome history. This helps Google provide better search results, suggestions, and personalization across Google services. Activity older than 18 months will be automatically deleted. You can change your auto-delete option, stop saving activity, or delete it manually at account.google.com.
                                 </span>
-                                <div class="radio-container">
-                                    <input class="pointer" type="radio" name="web-activity" id="save-web-activity" style="margin-right: 10px; transform: scale(1.3);">
-                                    <div class="pointer"><label for="save-web-activity">Save my Web & App activity in my Google Account</label></div>
+                                <div>
+                                    <div class="radio-container">
+                                        <input class="pointer" type="radio" name="web-activity" id="save-web-activity" style="margin-right: 10px; transform: scale(1.3);" checked>
+                                        <div class="pointer"><label for="save-web-activity">Save my Web & App activity in my Google Account</label></div>
+                                    </div>
+                                    <div class="radio-container">
+                                        <input class="pointer" type="radio" name="web-activity" id="dont-save-web-activity" style="margin-right: 10px; transform: scale(1.3);">
+                                        <div class="pointer"><label for="dont-save-web-activity">Don't save my Web & App activity in my Google Account</label></div>
+                                    </div>
                                 </div>
-                                <div class="radio-container">
-                                    <input class="pointer" type="radio" name="web-activity" id="dont-save-web-activity" style="margin-right: 10px; transform: scale(1.3);">
-                                    <div class="pointer"><label for="dont-save-web-activity">Don't save my Web & App activity in my Google Account</label></div>
+                                <div class="sub-heading-with-icon"><svg aria-hidden="true" class="stUf5b d7Plee" fill="#5f6368" focusable="false" width="20px" height="20px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"></path></svg><span style="font-size: 16px; font-weight: 700;">Ad personalization</span></div>
+                                <span style="font-size: 14px;">Google can show you ads based on your activity on Google services (such as Search or YouTube), and on websites and apps that partner with Google.
+                                </span>
+                                <div>
+                                    <div class="radio-container">
+                                        <input class="pointer" type="radio" name="personalized-ads" id="show-personalized-ad" style="margin-right: 10px; transform: scale(1.3);" checked>
+                                        <div class="pointer"><label for="show-personalized-ad">Show me personalized ads</label></div>
+                                    </div>
+                                    <div class="radio-container">
+                                        <input class="pointer" type="radio" name="personalized-ads" id="dont-show-personalized-ad" style="margin-right: 10px; transform: scale(1.3);">
+                                        <div class="pointer"><label for="dont-show-personalized-ad">Show me ads that aren't personalized</label></div>
+                                    </div>
                                 </div>
-                                
+                                <div class="sub-heading-with-icon"><svg aria-hidden="true" class="stUf5b d7Plee" fill="#5f6368" focusable="false" width="20px" height="20px" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg"><path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"></path></svg><span style="font-size: 16px; font-weight: 700;">YouTube History</span></div>
+                                <span style="font-size: 14px;">Saves the YouTube videos you watch and the things you search for on YouTube. This helps Google give you better recommendations, remember where you left off, and more. Activity older than 36 months will be automatically deleted. You can change your auto-delete option, stop saving activity, or delete it manually at account.google.com.
+                                </span>
+                                <div>
+                                    <div class="radio-container">
+                                        <input class="pointer" type="radio" name="youtube-history" id="save-youtube-history" style="margin-right: 10px; transform: scale(1.3);" checked>
+                                        <div class="pointer"><label for="save-youtube-history">Save my YouTube History in my Google Account</label></div>
+                                    </div>
+                                    <div class="radio-container">
+                                        <input class="pointer" type="radio" name="youtube-history" id="dont-save-youtube-history" style="margin-right: 10px; transform: scale(1.3);">
+                                        <div class="pointer"><label for="dont-save-youtube-history">Don’t save my YouTube History in my Google Account</label></div>
+                                    </div>
+                                </div>
+                                <span style="font-size: 14px;">These settings apply wherever you are signed in to your new Google Account.</span>
+                                <div class="radio-container">
+                                    <input class="pointer" type="checkbox" name="reminders" id="send-reminders" style="margin-right: 10px; transform: scale(1.3);">
+                                    <div class="pointer"><label for="send-reminders">Send me occasional reminders about these settings</label></div>
+                                </div>
                             </div>
                             <div class="options-container">
                                 <span class="back-button" onclick="toggle(3)">Cancel</span>
@@ -358,25 +402,29 @@
                 </div>
                 <div class="step-instruction">
                     <div class="instruction default-instruction">
-                        <div class="instruction-text">First two fields are optional fields. Google ask for recovery phone and email only for security of this account. <br>Enter your birthdate as shown in image. </div>
-                        <div class="warning-text">Birthdate fields cannot be empty.</div>
-                        <div><img src="Image-12.jpg" alt="image12" style="width: 100%;"></div>
-                    </div>
-                    <div class="instruction">
-                        <div class="instruction-text">Choose your gender. You can choose "Rather not to say" or "Custom" if you don't want to reveal your gender or write custom gender respectively.</div>
-                        <div class="warning-text">Gender field must be selected.</div>
-                        <div><img src="Image-13.jpg" alt="image13" style="width: 100%;"></div>
-                    </div>
-                    <div class="instruction">
-                        <div class="instruction-text">Click on next if you have entered all data correctly.</div>
+                        <div class="instruction-text">Click on 'I agree' after reading privacy policy. You can also personalize some settings on clicking 'more options'.</div>
                         <div class="warning-text"></div>
-                        <div><img src="Image-8.jpg" alt="image8" style="width: 100%;"></div>
+                        <div><img src="Image-14.jpg" alt="image14" style="width: 100%;"></div>
                     </div>
+                </div>
+            </div>
+            <div class="step greeting">
+                <img src="greeting-image.jpg" alt="greeting-image" style="width: 100%;">
+                <div class="cta">
+                    <span style="text-align: center;">Now you can directly visit google website and follow same steps to create your first google account.</span>
+                    <a class="button" href="https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp" target="_blank" style="text-decoration: none; height: fit-content;">Click here</a>
                 </div>
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
     
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="main.js"></script>
 </body>
 </html>

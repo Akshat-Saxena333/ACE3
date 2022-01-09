@@ -1,10 +1,24 @@
 let customEmail=0;
+let dict = { 0:0, 1:5, 2:7, 3:9, 4:12, 5:13, 6:13 };
+
+let firstname, lastname, username, email, password, confirmPassword;
+let firstnameEleRef, lastnameEleRef, usernameEleRef, passwordEleRef, confirmPasswordEleRef;
+firstnameEleRef = document.getElementsByClassName('first-name')[0];
+lastnameEleRef = document.getElementsByClassName('last-name')[0];
+usernameEleRef = document.getElementsByClassName('user-name')[0];
+passwordEleRef = document.getElementsByClassName('password')[0];
+confirmPasswordEleRef = document.getElementsByClassName('confirm')[0];
 
 function toggle(a) {
     let steps = document.getElementsByClassName('step');
-    for(let step of steps)
-        step.style.display = 'none';
+    let stepOpt = document.getElementsByClassName('step-opt');
+    for(let i=0 ; i<steps.length ; i++) {
+        stepOpt[i].style.background = 'rgb(0, 0, 85)';
+        steps[i].style.display = 'none';
+    }
+    stepOpt[a].style.background = '#0000b5';
     steps[a].style.display = 'grid';
+    toggleInstruction(dict[a]);
 }
 
 function togglePassword(el) {
@@ -23,6 +37,8 @@ function toggleEmail(el) {
     username.placeholder = (username.placeholder === "Username") ? "Your custom email address" : "Username";
     document.getElementsByClassName('email-domain')[0].classList.toggle('none');
     toggleInnerText(document.getElementsByClassName('user-name-suggestion')[0], "You can use letters, numbers & periods", "You'll need to confirm that this email belongs to you.");
+    email = `${username.value}${customEmail ? '' : '@gmail.com'}`;
+    document.getElementsByClassName('email-display')[0].innerText = email;
 }
 
 function validateUsername(a, el) {
@@ -108,13 +124,6 @@ function validateConfirm(a, el) {
         return true;
     }
 }
-let firstname, lastname, username, email, password, confirmPassword;
-let firstnameEleRef, lastnameEleRef, usernameEleRef, passwordEleRef, confirmPasswordEleRef;
-firstnameEleRef = document.getElementsByClassName('first-name')[0];
-lastnameEleRef = document.getElementsByClassName('last-name')[0];
-usernameEleRef = document.getElementsByClassName('user-name')[0];
-passwordEleRef = document.getElementsByClassName('password')[0];
-confirmPasswordEleRef = document.getElementsByClassName('confirm')[0];
 
 firstnameEleRef.addEventListener('change', function() {
     firstname = firstnameEleRef.value;
@@ -171,7 +180,7 @@ function validateStep2() {
 }
 function verifyCode(a, el) {
     let warning = document.getElementsByClassName('warning-text')[a];
-    console.log(el.value)
+    // console.log(el.value)
     if(el.value !== '787825') {
         toggleInstruction(a);
         warning.style.display = 'block';
@@ -188,7 +197,6 @@ function validateStep3() {
     let verifyCodeEleRef = document.getElementsByClassName('verify-code')[0];
     if(verifyCode(7, verifyCodeEleRef)) {
         toggle(3);
-        toggleInstruction(7);
     }
 }
 
@@ -252,4 +260,7 @@ function moreOptions() {
     let moreOptions = document.getElementsByClassName('more-options')[0];
     moreOptions.classList.toggle('none');
 }
-// toggle(4);
+// toggle(5);
+function validateStep5() {
+    toggle(5);
+}
